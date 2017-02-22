@@ -3,7 +3,15 @@ require 'json'
 
 result = RestClient.{{=data.method}} '{{=data.url}}', {content_type: :json, accept: :json, :X-Auth-Client => 'ClientID', :X-Auth-Token => 'AuthToken'}, params:
   {
-    #TODO
+	  {{? data.method === 'put'}}
+	  success = "true"
+	  {{?? data.method === 'post'}}
+
+	  {{?? data.method === 'get'}}
+
+	  {{?? data.method == 'delete'}}
+	  
+	  {{?}}
   }
 
 p JSON.parse(result)
