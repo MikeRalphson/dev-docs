@@ -8,7 +8,15 @@ headers = {
 }
 
 r = requests.{{=data.method}}('{{=data.url}}', headers=headers, params={
-  # TODO
+  {{? data.method === 'put'}}
+  success = "true"
+  {{?? data.method === 'post'}}
+
+  {{?? data.method === 'get'}}
+
+  {{?? data.method == 'delete'}}
+  
+  {{?}}
 })
 
 print r.json()

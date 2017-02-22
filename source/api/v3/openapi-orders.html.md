@@ -2,7 +2,7 @@
 title: BigCommerce Orders API v3.0.0
 layout: "apitwocolumn"
 language_tabs:
-  - ''
+  - python
 toc_footers: []
 includes: []
 search: true
@@ -26,6 +26,23 @@ BigCommerce Orders API Definition.
 ## getTransactions
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 `GET /orders/{order_id}/transactions`
 

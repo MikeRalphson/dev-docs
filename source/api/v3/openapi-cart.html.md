@@ -2,7 +2,7 @@
 title: Order API v2.0.0
 layout: "apitwocolumn"
 language_tabs:
-  - ''
+  - python
 toc_footers: []
 includes: []
 search: true
@@ -24,6 +24,23 @@ Base URL = ://undefined/
 ## POST /billing
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.post('://undefined/billing', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 Add / Update the billing address in quote object
 
@@ -60,6 +77,23 @@ This operation does not require authentication
 
 > Code samples
 
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.get('://undefined/cart', headers=headers, params={
+  
+})
+
+print r.json()
+````
+
 *Retrieve cart data*
 
 Retrieves a cart, which is the composition of set of items
@@ -85,6 +119,23 @@ This operation does not require authentication
 ## POST /coupon
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.post('://undefined/coupon', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 Adding coupon or gift certificate code to the cart
 
@@ -121,6 +172,23 @@ This operation does not require authentication
 
 > Code samples
 
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.delete('://undefined/coupon/{couponCode}', headers=headers, params={
+  
+})
+
+print r.json()
+````
+
 Removing coupon or gift certificate code from the cart
 
 ### Parameters
@@ -150,6 +218,23 @@ This operation does not require authentication
 ## POST /customer
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.post('://undefined/customer', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 Associate the quote object to a customer. Parameters are comma separated as values against `includes` key. For example, `/quote?includes=customer,shippingOptions`
 
@@ -188,6 +273,23 @@ This operation does not require authentication
 
 > Code samples
 
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.get('://undefined/customer', headers=headers, params={
+  
+})
+
+print r.json()
+````
+
 currently any GET request to /customer end point will result to a `405` response because `getAction()` method does't exists
 
 ### Parameters
@@ -217,6 +319,23 @@ This operation does not require authentication
 ## DELETE /customer
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.delete('://undefined/customer', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 Remove customer information from the quote.
 
@@ -251,6 +370,23 @@ This operation does not require authentication
 ## POST /order
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.post('://undefined/order', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 Used to create an order (currently we use session to retrieve quote data)
 
@@ -295,6 +431,23 @@ This operation does not require authentication
 
 > Code samples
 
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.get('://undefined/order/{orderId}', headers=headers, params={
+  
+})
+
+print r.json()
+````
+
 *Retrieve order data*
 
 Retrieves an order, which is the composition of set of items
@@ -326,6 +479,23 @@ This operation does not require authentication
 ## POST /order/{orderId}
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.post('://undefined/order/{orderId}', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 Update the order. Finalize in case the order has been set previously in checkout
 
@@ -421,6 +591,23 @@ This operation does not require authentication
 ## POST /order/{orderId}/payment
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.post('://undefined/order/{orderId}/payment', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 Update the payment and order status from payment service (BigPay) & finalize the order. Requires HAWK authentication.
 
@@ -536,6 +723,23 @@ This operation does not require authentication
 
 > Code samples
 
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.get('://undefined/payments', headers=headers, params={
+  
+})
+
+print r.json()
+````
+
 Retrieve a list of existing payment methods
 
 ### Responses
@@ -556,6 +760,23 @@ This operation does not require authentication
 ## GET /payments/{providerId}
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.get('://undefined/payments/{providerId}', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 Retrieve a single, existing payment method
 
@@ -585,6 +806,23 @@ This operation does not require authentication
 ## GET /quote
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.get('://undefined/quote', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 Parameters are comma separated as values against `includes` key. For example, `/quote?includes=customer,shippingOptions`
 
@@ -620,6 +858,23 @@ This operation does not require authentication
 ## POST /shipping
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.post('://undefined/shipping', headers=headers, params={
+  
+})
+
+print r.json()
+````
 
 Add / Update the shipping address in quote object
 
@@ -658,6 +913,23 @@ This operation does not require authentication
 
 > Code samples
 
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.get('://undefined/shippingOptions', headers=headers, params={
+  
+})
+
+print r.json()
+````
+
 *Retrieve Shipping Options*
 
 Retrieves a list of all available shipping options for the current quote
@@ -689,6 +961,25 @@ This operation does not require authentication
 ## PUT /shippingOptions
 
 > Code samples
+
+````python
+import requests
+
+headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/json",
+	'X-Auth-Client': "SampleClientCode",
+	'X-Auth-Token': "8675309"
+}
+
+r = requests.put('://undefined/shippingOptions', headers=headers, params={
+  
+  success = "true"
+  
+})
+
+print r.json()
+````
 
 *Set Shipping Option*
 
