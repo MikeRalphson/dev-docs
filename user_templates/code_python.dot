@@ -1,22 +1,24 @@
 import requests
 
 headers = {
-	'{{?data.consumes.length}}Content-Type': "{{=data.consumes[0]}}{{?}}",
-	'{{?data.produces.length}}Accept': "{{=data.produces[0]}}{{?}}",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'{{?data.consumes.length}}Content-Type': '{{=data.consumes[0]}}{{?}}',
+	'{{?data.produces.length}}Accept': '{{=data.produces[0]}}{{?}}',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+{{? data.method === 'put'}}
 r = requests.{{=data.method}}('{{=data.url}}', headers=headers, params={
-  {{? data.method === 'put'}}
-  success = "true"
-  {{?? data.method === 'post'}}
 
-  {{?? data.method === 'get'}}
-
-  {{?? data.method == 'delete'}}
-  
-  {{?}}
 })
+{{?? data.method === 'post'}}
+r = requests.{{=data.method}}('{{=data.url}}', headers=headers, params={
+	{{? data.parameters.length}}
+	{{~ data.parameters :p:index}}'{{=p.name}}':'{{=p.type}}'{{? data.parameters.length-1 != index && index == 0 }},{{?}}
+	{{~}}{{?}}
+})
+{{?? data.method === 'get' || 'delete'}}
+r = requests.{{=data.method}}('{{=data.url}}', headers=headers)
+{{?}}
 
 print r.json()

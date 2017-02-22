@@ -1,0 +1,26 @@
+{
+  "name": "dev-docs",
+  "version": "1.0.0",
+  "description": "developer documentation for BigCommece which uses widdershins.",
+  "main": "swagger2md.js",
+  "dependencies": {
+    "widdershins": "^1.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node swagger2md.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bc-AlyssNoland/dev-docs.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Alyss Noland & Nathan Booker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bc-AlyssNoland/dev-docs/issues"
+  },
+  "homepage": "https://github.com/bc-AlyssNoland/dev-docs#readme"
+}

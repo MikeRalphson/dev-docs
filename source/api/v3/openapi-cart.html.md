@@ -1,6 +1,6 @@
 ---
 title: Order API v2.0.0
-layout: "apitwocolumn"
+layout: "layout"
 language_tabs:
   - python
 toc_footers: []
@@ -12,8 +12,6 @@ highlight_theme: darkula
 # Order API v2.0.0
 
 
-
-Base URL = ://undefined/
 
 
 
@@ -29,15 +27,20 @@ Base URL = ://undefined/
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('://undefined/billing', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'billingData':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -46,10 +49,10 @@ Add / Update the billing address in quote object
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-quote|query|string|false|No description
-billingData|body|BillingRequestData|false|No description
+quote|query|string|No description
+billingData|body|BillingRequestData|No description
 
 
 
@@ -81,15 +84,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('://undefined/cart', headers=headers, params={
-  
-})
+
+r = requests.get('://undefined/cart', headers=headers)
+
 
 print r.json()
 ````
@@ -124,15 +127,19 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('://undefined/coupon', headers=headers, params={
-  
+	
+	'couponCode':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -141,9 +148,9 @@ Adding coupon or gift certificate code to the cart
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-couponCode|body|string|false|coupon or gift certificate code
+couponCode|body|string|coupon or gift certificate code
 
 
 
@@ -176,15 +183,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('://undefined/coupon/{couponCode}', headers=headers, params={
-  
-})
+
+r = requests.delete('://undefined/coupon/{couponCode}', headers=headers)
+
 
 print r.json()
 ````
@@ -193,9 +200,9 @@ Removing coupon or gift certificate code from the cart
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-couponCode|path|string|true|coupon or gift certificate code
+couponCode|path|string|coupon or gift certificate code
 
 
 
@@ -223,15 +230,25 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('://undefined/customer', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'undefined':'undefined'
+	'undefined':'undefined'
+	'undefined':'undefined'
+	'undefined':'undefined'
+	'undefined':'undefined'
+	'undefined':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -240,15 +257,15 @@ Associate the quote object to a customer. Parameters are comma separated as valu
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-quote|query|string|false|No description
-customer|query|string|false|No description
-shippingAddress|query|string|false|No description
-billingAddress|query|string|false|No description
-shippingOptions|query|string|false|No description
-cart|query|string|false|No description
-order|query|string|false|No description
+quote|query|string|No description
+customer|query|string|No description
+shippingAddress|query|string|No description
+billingAddress|query|string|No description
+shippingOptions|query|string|No description
+cart|query|string|No description
+order|query|string|No description
 
 
 
@@ -277,15 +294,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('://undefined/customer', headers=headers, params={
-  
-})
+
+r = requests.get('://undefined/customer', headers=headers)
+
 
 print r.json()
 ````
@@ -294,15 +311,15 @@ currently any GET request to /customer end point will result to a `405` response
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-quote|query|string|false|No description
-customer|query|string|false|No description
-shippingAddress|query|string|false|No description
-billingAddress|query|string|false|No description
-shippingOptions|query|string|false|No description
-cart|query|string|false|No description
-order|query|string|false|No description
+quote|query|string|No description
+customer|query|string|No description
+shippingAddress|query|string|No description
+billingAddress|query|string|No description
+shippingOptions|query|string|No description
+cart|query|string|No description
+order|query|string|No description
 
 
 
@@ -324,15 +341,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('://undefined/customer', headers=headers, params={
-  
-})
+
+r = requests.delete('://undefined/customer', headers=headers)
+
 
 print r.json()
 ````
@@ -341,14 +358,14 @@ Remove customer information from the quote.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-quote|query|string|false|No description
-customer|query|string|false|No description
-shippingAddress|query|string|false|No description
-billingAddress|query|string|false|No description
-shippingOptions|query|string|false|No description
-cart|query|string|false|No description
+quote|query|string|No description
+customer|query|string|No description
+shippingAddress|query|string|No description
+billingAddress|query|string|No description
+shippingOptions|query|string|No description
+cart|query|string|No description
 
 
 
@@ -375,15 +392,19 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('://undefined/order', headers=headers, params={
-  
+	
+	'Data':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -392,9 +413,9 @@ Used to create an order (currently we use session to retrieve quote data)
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-Data|body|RequestOrderData|true|A collection of data consumed by the order endpoint when creating the order for different payment methods and payment providers.
+Data|body|RequestOrderData|A collection of data consumed by the order endpoint when creating the order for different payment methods and payment providers.
 
 
 
@@ -435,15 +456,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('://undefined/order/{orderId}', headers=headers, params={
-  
-})
+
+r = requests.get('://undefined/order/{orderId}', headers=headers)
+
 
 print r.json()
 ````
@@ -454,9 +475,9 @@ Retrieves an order, which is the composition of set of items
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-orderId|path|integer|true|Id of the Order
+orderId|path|integer|Id of the Order
 
 
 
@@ -484,15 +505,19 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('://undefined/order/{orderId}', headers=headers, params={
-  
+	
+	'orderId':'integer'
+	
 })
+
 
 print r.json()
 ````
@@ -501,9 +526,9 @@ Update the order. Finalize in case the order has been set previously in checkout
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-orderId|path|integer|true|Id of the Order
+orderId|path|integer|Id of the Order
 
 
 
@@ -596,15 +621,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('://undefined/order/{orderId}/payment', headers=headers, params={
-  
+	
+	'orderId':'integer',
+	'paymentData':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -613,10 +643,10 @@ Update the payment and order status from payment service (BigPay) & finalize the
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-orderId|path|integer|true|Id of the Order to be updated
-paymentData|body|PaymentRequestData|true|No description
+orderId|path|integer|Id of the Order to be updated
+paymentData|body|PaymentRequestData|No description
 
 
 
@@ -727,15 +757,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('://undefined/payments', headers=headers, params={
-  
-})
+
+r = requests.get('://undefined/payments', headers=headers)
+
 
 print r.json()
 ````
@@ -765,15 +795,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('://undefined/payments/{providerId}', headers=headers, params={
-  
-})
+
+r = requests.get('://undefined/payments/{providerId}', headers=headers)
+
 
 print r.json()
 ````
@@ -782,9 +812,9 @@ Retrieve a single, existing payment method
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-providerId|path|string|true|Id of the payment provider
+providerId|path|string|Id of the payment provider
 
 
 
@@ -811,15 +841,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('://undefined/quote', headers=headers, params={
-  
-})
+
+r = requests.get('://undefined/quote', headers=headers)
+
 
 print r.json()
 ````
@@ -828,15 +858,15 @@ Parameters are comma separated as values against `includes` key. For example, `/
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-quote|query|string|false|No description
-customer|query|string|false|No description
-shippingAddress|query|string|false|No description
-billingAddress|query|string|false|No description
-shippingOptions|query|string|false|No description
-cart|query|string|false|No description
-order|query|string|false|No description
+quote|query|string|No description
+customer|query|string|No description
+shippingAddress|query|string|No description
+billingAddress|query|string|No description
+shippingOptions|query|string|No description
+cart|query|string|No description
+order|query|string|No description
 
 
 
@@ -863,15 +893,22 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('://undefined/shipping', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'undefined':'undefined'
+	'undefined':'undefined'
+	'shippingData':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -880,12 +917,12 @@ Add / Update the shipping address in quote object
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-cart|query|string|false|No description
-quote|query|string|false|No description
-shippingOptions|query|string|false|No description
-shippingData|body|ShippingRequestData|false|No description
+cart|query|string|No description
+quote|query|string|No description
+shippingOptions|query|string|No description
+shippingData|body|ShippingRequestData|No description
 
 
 
@@ -917,15 +954,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('://undefined/shippingOptions', headers=headers, params={
-  
-})
+
+r = requests.get('://undefined/shippingOptions', headers=headers)
+
 
 print r.json()
 ````
@@ -966,17 +1003,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('://undefined/shippingOptions', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -987,9 +1024,9 @@ Set in the order the selected shipping option
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-ShippingOptionRequestData|body|ShippingOptionRequestData|false|No description
+ShippingOptionRequestData|body|ShippingOptionRequestData|No description
 
 
 

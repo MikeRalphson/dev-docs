@@ -1,6 +1,6 @@
 ---
 title: BigCommerce Catalog API v3.0.0b
-layout: "apitwocolumn"
+layout: "layout"
 language_tabs:
   - python
 toc_footers: []
@@ -13,9 +13,7 @@ highlight_theme: darkula
 
 A Swagger Document for the BigCommmerce API V3.
 
-Base URL = https://api.bigcommerce.com/stores/{{store_id}}/v3
 
-<a href="http://www.bigcommerce.com/terms">Terms of service</a>
 
 
 
@@ -31,15 +29,15 @@ BigCommerce Catalog API Definition.
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products', headers=headers)
+
 
 print r.json()
 ````
@@ -51,37 +49,37 @@ Returns a paginated collection of `Products` objects from the BigCommerce Catalo
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-id|query|integer|false|Filter items by id.
-name|query|string|false|Filter items by name.
-sku|query|string|false|Filter items by sku.
-upc|query|string|false|Filter items by upc.
-price|query|number|false|Filter items by price.
-weight|query|number|false|Filter items by weight.
-condition|query|integer|false|Filter items by condition.
-brand_id|query|integer|false|Filter items by brand_id.
-date_modified|query|string|false|Filter items by date_modified.
-date_last_imported|query|string|false|Filter items by date_last_imported.
-is_visible|query|integer|false|Filter items by is_visible.
-is_featured|query|integer|false|Filter items by is_featured.
-is_free_shipping|query|integer|false|Filter items by is_free_shipping.
-inventory_level|query|integer|false|Filter items by inventory_level.
-inventory_low|query|integer|false|Filter items by inventory_low; values: 1, 0.
-out_of_stock|query|integer|false|Filter items by out_of_stock. To enable the filter, pass `out_of_stock`=`1`.
-total_sold|query|integer|false|Filter items by total_sold.
-type|query|string|false|Filter items by type: `physical` or `digital`.
-categories|query|integer|false|Filter items by categories.
-keyword|query|string|false|Filter items by keywords found in the name, description, sku, keywords, or brand name.
-keyword_context|query|string|false|Set context for a product search.
-channel_id|query|integer|false|Filter items by channel.
-status|query|integer|false|Filter items by status.
-include|query|string|false|Include sub-resources on a product, with a comma-separated list. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`.
-availability|query|string|false|Filter items by availability. Values are: available, disabled, preorder.
-page|query|integer|false|Control the page in a limited list of products.
-limit|query|integer|false|Control the items per page.
-direction|query|string|false|Sort direction. Values are: asc, desc.
-sort|query|string|false|Field name to sort by.
+id|query|integer|Filter items by id.
+name|query|string|Filter items by name.
+sku|query|string|Filter items by sku.
+upc|query|string|Filter items by upc.
+price|query|number|Filter items by price.
+weight|query|number|Filter items by weight.
+condition|query|integer|Filter items by condition.
+brand_id|query|integer|Filter items by brand_id.
+date_modified|query|string|Filter items by date_modified.
+date_last_imported|query|string|Filter items by date_last_imported.
+is_visible|query|integer|Filter items by is_visible.
+is_featured|query|integer|Filter items by is_featured.
+is_free_shipping|query|integer|Filter items by is_free_shipping.
+inventory_level|query|integer|Filter items by inventory_level.
+inventory_low|query|integer|Filter items by inventory_low; values: 1, 0.
+out_of_stock|query|integer|Filter items by out_of_stock. To enable the filter, pass `out_of_stock`=`1`.
+total_sold|query|integer|Filter items by total_sold.
+type|query|string|Filter items by type: `physical` or `digital`.
+categories|query|integer|Filter items by categories.
+keyword|query|string|Filter items by keywords found in the name, description, sku, keywords, or brand name.
+keyword_context|query|string|Set context for a product search.
+channel_id|query|integer|Filter items by channel.
+status|query|integer|Filter items by status.
+include|query|string|Include sub-resources on a product, with a comma-separated list. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`.
+availability|query|string|Filter items by availability. Values are: available, disabled, preorder.
+page|query|integer|Control the page in a limited list of products.
+limit|query|integer|Control the items per page.
+direction|query|string|Sort direction. Values are: asc, desc.
+sort|query|string|Field name to sort by.
 
 
 
@@ -369,15 +367,19 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products', headers=headers, params={
-  
+	
+	'product':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -389,9 +391,9 @@ Creates a `Product` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product|body|ProductPost|true|A BigCommerce `Product` object.
+product|body|ProductPost|A BigCommerce `Product` object.
 
 
 
@@ -687,15 +689,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products', headers=headers)
+
 
 print r.json()
 ````
@@ -707,23 +709,23 @@ Deletes one or more `Product` objects from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-name|query|string|false|Filter items by name.
-sku|query|string|false|Filter items by sku.
-price|query|number|false|Filter items by price.
-weight|query|number|false|Filter items by weight.
-condition|query|integer|false|Filter items by condition.
-brand_id|query|integer|false|Filter items by brand_id.
-date_modified|query|string|false|Filter items by date_modified.
-date_last_imported|query|string|false|Filter items by date_last_imported.
-is_visible|query|integer|false|Filter items by is_visible.
-is_featured|query|integer|false|Filter items by is_featured.
-inventory_level|query|integer|false|Filter items by inventory_level.
-total_sold|query|integer|false|Filter items by total_sold.
-type|query|string|false|Filter items by type: `physical` or `digital`.
-categories|query|integer|false|Filter items by categories.
-keyword|query|string|false|Filter items by keywords found in the name, description, sku, keywords, or brand name.
+name|query|string|Filter items by name.
+sku|query|string|Filter items by sku.
+price|query|number|Filter items by price.
+weight|query|number|Filter items by weight.
+condition|query|integer|Filter items by condition.
+brand_id|query|integer|Filter items by brand_id.
+date_modified|query|string|Filter items by date_modified.
+date_last_imported|query|string|Filter items by date_last_imported.
+is_visible|query|integer|Filter items by is_visible.
+is_featured|query|integer|Filter items by is_featured.
+inventory_level|query|integer|Filter items by inventory_level.
+total_sold|query|integer|Filter items by total_sold.
+type|query|string|Filter items by type: `physical` or `digital`.
+categories|query|integer|Filter items by categories.
+keyword|query|string|Filter items by keywords found in the name, description, sku, keywords, or brand name.
 
 
 
@@ -791,15 +793,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -811,10 +813,10 @@ Returns a `Product` from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-include|query|string|false|Include sub-resources on a product, with a comma-separated list. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+include|query|string|Include sub-resources on a product, with a comma-separated list. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`.
 
 
 
@@ -1002,17 +1004,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -1024,10 +1026,10 @@ Updates a `Product` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-product|body|ProductPut|true|A BigCommerce `Product` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+product|body|ProductPut|A BigCommerce `Product` object.
 
 
 
@@ -1331,15 +1333,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -1351,9 +1353,9 @@ Deletes a `Product` object from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
 
 
 
@@ -1379,15 +1381,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images', headers=headers)
+
 
 print r.json()
 ````
@@ -1399,9 +1401,9 @@ Gets all images on a product.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
 
 
 
@@ -1471,15 +1473,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'productImage':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -1491,10 +1498,10 @@ Creates an image on a product. Publically accessible URLs and files (form post) 
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-productImage|body|ProductImagePost|true|A BigCommerce `ProductImage` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+productImage|body|ProductImagePost|A BigCommerce `ProductImage` object.
 
 
 
@@ -1563,15 +1570,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images/{image_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images/{image_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -1583,10 +1590,10 @@ Gets image on a product.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-image_id|path|integer|true|The ID of the `Image` that is being operated on.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+image_id|path|integer|The ID of the `Image` that is being operated on.
 
 
 
@@ -1644,17 +1651,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images/{image_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -1666,11 +1673,11 @@ Updates an image on a product. Publicly accessible URLs and files (form post) ar
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-image_id|path|integer|true|The ID of the `Image` that is being operated on.
-productImage|body|ProductImagePut|true|A BigCommerce `ProductImage` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+image_id|path|integer|The ID of the `Image` that is being operated on.
+productImage|body|ProductImagePut|A BigCommerce `ProductImage` object.
 
 
 
@@ -1740,15 +1747,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images/{image_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images/{image_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -1760,10 +1767,10 @@ Deletes a `ProductImage` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-image_id|path|integer|true|The ID of the `Image` that is being operated on.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+image_id|path|integer|The ID of the `Image` that is being operated on.
 
 
 
@@ -1792,15 +1799,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos', headers=headers)
+
 
 print r.json()
 ````
@@ -1812,9 +1819,9 @@ Gets all videos on a product.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
 
 
 
@@ -1868,15 +1875,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'productVideo':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -1888,10 +1900,10 @@ Creates a video on a product, using a video ID from YouTube.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-productVideo|body|ProductVideoPost|true|A BigCommerce `ProductVideo` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+productVideo|body|ProductVideoPost|A BigCommerce `ProductVideo` object.
 
 
 
@@ -1956,15 +1968,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos/{video_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos/{video_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -1976,10 +1988,10 @@ Gets video on a product.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-video_id|path|string|true|The ID of the `Video` being operated on.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+video_id|path|string|The ID of the `Video` being operated on.
 
 
 
@@ -2033,17 +2045,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos/{video_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -2055,11 +2067,11 @@ Updates a video on a product.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-video_id|path|string|true|The ID of the `Video` being operated on.
-productVideo|body|ProductVideoPut|true|A BigCommerce `ProductVideo` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+video_id|path|string|The ID of the `Video` being operated on.
+productVideo|body|ProductVideoPut|A BigCommerce `ProductVideo` object.
 
 
 
@@ -2125,15 +2137,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos/{video_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos/{video_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -2145,10 +2157,10 @@ Deletes a `ProductVideo` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-video_id|path|string|true|The ID of the `Video` being operated on.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+video_id|path|string|The ID of the `Video` being operated on.
 
 
 
@@ -2177,15 +2189,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants', headers=headers)
+
 
 print r.json()
 ````
@@ -2197,11 +2209,11 @@ Returns a `Variant` object list from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-page|query|integer|false|Control the page in a limited list of products.
-limit|query|integer|false|Control the items per page.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+page|query|integer|Control the page in a limited list of products.
+limit|query|integer|Control the items per page.
 
 
 
@@ -2287,15 +2299,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'Variant':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -2306,10 +2323,10 @@ Creates a `Variant` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-Variant|body|VariantPost|true|`Variant` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+Variant|body|VariantPost|`Variant` object.
 
 
 
@@ -2403,15 +2420,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -2422,10 +2439,10 @@ Gets a `Variant` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-variant_id|path|number|true|The ID of the `Variant` to which the resource belongs.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+variant_id|path|number|The ID of the `Variant` to which the resource belongs.
 
 
 
@@ -2495,17 +2512,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -2516,11 +2533,11 @@ Updates a `Variant` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-variant_id|path|number|true|The ID of the `Variant` to which the resource belongs.
-Variant|body|VariantPut|true|A `Variant` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+variant_id|path|number|The ID of the `Variant` to which the resource belongs.
+Variant|body|VariantPut|A `Variant` object.
 
 
 
@@ -2610,15 +2627,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -2630,10 +2647,10 @@ Deletes a `Variant`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-variant_id|path|number|true|The ID of the `Variant` to which the resource belongs.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+variant_id|path|number|The ID of the `Variant` to which the resource belongs.
 
 
 
@@ -2662,15 +2679,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields', headers=headers)
+
 
 print r.json()
 ````
@@ -2682,14 +2699,14 @@ Gets a `Metafield` object list, by product_id and variant_id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-variant_id|path|number|true|The ID of the `Variant` to which the resource belongs.
-page|query|integer|false|Control the page in a limited list of products.
-limit|query|integer|false|Control the items per page.
-key|query|string|false|Filter based on a metafield's key.
-namespace|query|string|false|Filter based on a metafield's key.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+variant_id|path|number|The ID of the `Variant` to which the resource belongs.
+page|query|integer|Control the page in a limited list of products.
+limit|query|integer|Control the items per page.
+key|query|string|Filter based on a metafield's key.
+namespace|query|string|Filter based on a metafield's key.
 
 
 
@@ -2734,8 +2751,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-22T19:22:50Z",
-      "updated_at": "2017-02-22T19:22:50Z"
+      "created_at": "2017-02-23T00:48:56Z",
+      "updated_at": "2017-02-23T00:48:56Z"
     }
   ],
   "meta": {
@@ -2772,15 +2789,21 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'undefined':'undefined'
+	'Metafield':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -2791,11 +2814,11 @@ Creates a variant `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-variant_id|path|number|true|The ID of the `Variant` to which the resource belongs.
-Metafield|body|MetafieldPost|true|A `Metafield` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+variant_id|path|number|The ID of the `Variant` to which the resource belongs.
+Metafield|body|MetafieldPost|A `Metafield` object.
 
 
 
@@ -2845,8 +2868,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -2887,15 +2910,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -2907,11 +2930,11 @@ Gets a `Metafield`, by product_id and variant_id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-variant_id|path|number|true|The ID of the `Variant` to which the resource belongs.
+metafield_id|path|number|The ID of the `Metafield`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+variant_id|path|number|The ID of the `Variant` to which the resource belongs.
 
 
 
@@ -2946,8 +2969,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -2972,17 +2995,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -2993,12 +3016,12 @@ Updates a `Metafield` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-variant_id|path|number|true|The ID of the `Variant` to which the resource belongs.
-Metafield|body|MetafieldPut|true|A `Metafield` object.
+metafield_id|path|number|The ID of the `Metafield`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+variant_id|path|number|The ID of the `Variant` to which the resource belongs.
+Metafield|body|MetafieldPut|A `Metafield` object.
 
 
 
@@ -3050,8 +3073,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -3076,15 +3099,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -3096,11 +3119,11 @@ Deletes a `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-variant_id|path|number|true|The ID of the `Variant` to which the resource belongs.
+metafield_id|path|number|The ID of the `Metafield`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+variant_id|path|number|The ID of the `Variant` to which the resource belongs.
 
 
 
@@ -3132,15 +3155,21 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "multipart/form-data",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'multipart/form-data',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/image', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'undefined':'undefined'
+	'undefined':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -3149,11 +3178,11 @@ print r.json()
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-variant_id|path|number|true|The ID of the `Variant` to which the resource belongs.
-image_file|formData|file|true|An image file. Supported MIME types include GIF, JPEG, and PNG.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+variant_id|path|number|The ID of the `Variant` to which the resource belongs.
+image_file|formData|file|An image file. Supported MIME types include GIF, JPEG, and PNG.
 
 
 
@@ -3219,15 +3248,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options', headers=headers)
+
 
 print r.json()
 ````
@@ -3238,9 +3267,9 @@ Gets an array of `Option` objects.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
 
 
 
@@ -3272,8 +3301,8 @@ Status|Meaning|Description
         "checkbox_label": "string",
         "date_limited": true,
         "date_limit_mode": "earliest",
-        "date_earliest_value": "2017-02-22",
-        "date_latest_value": "2017-02-22",
+        "date_earliest_value": "2017-02-23",
+        "date_latest_value": "2017-02-23",
         "file_types_mode": "specific",
         "file_types_supported": [
           "string"
@@ -3342,15 +3371,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'Option':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -3361,10 +3395,10 @@ Creates an `Option`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-Option|body|OptionPost|true|An `Option` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+Option|body|OptionPost|An `Option` object.
 
 
 
@@ -3388,8 +3422,8 @@ An `Option` object.
     "checkbox_label": "string",
     "date_limited": true,
     "date_limit_mode": "earliest",
-    "date_earliest_value": "2017-02-22",
-    "date_latest_value": "2017-02-22",
+    "date_earliest_value": "2017-02-23",
+    "date_latest_value": "2017-02-23",
     "file_types_mode": "specific",
     "file_types_supported": [
       "string"
@@ -3449,8 +3483,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-22",
-      "date_latest_value": "2017-02-22",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -3523,15 +3557,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options/{option_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options/{option_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -3542,10 +3576,10 @@ Gets `Option` object by product ID and option id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-option_id|path|integer|true|The ID of the `Option`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+option_id|path|integer|The ID of the `Option`.
 
 
 
@@ -3579,8 +3613,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-22",
-      "date_latest_value": "2017-02-22",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -3637,17 +3671,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options/{option_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -3659,11 +3693,11 @@ Updates a Product's `Option`, based on the product_id and option_id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-option_id|path|integer|true|The ID of the `Option`.
-option|body|OptionPut|true|A BigCommerce `Option` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+option_id|path|integer|The ID of the `Option`.
+option|body|OptionPut|A BigCommerce `Option` object.
 
 
 
@@ -3690,8 +3724,8 @@ A BigCommerce `Option` object.
     "checkbox_label": "string",
     "date_limited": true,
     "date_limit_mode": "earliest",
-    "date_earliest_value": "2017-02-22",
-    "date_latest_value": "2017-02-22",
+    "date_earliest_value": "2017-02-23",
+    "date_latest_value": "2017-02-23",
     "file_types_mode": "specific",
     "file_types_supported": [
       "string"
@@ -3751,8 +3785,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-22",
-      "date_latest_value": "2017-02-22",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -3825,15 +3859,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options/{option_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options/{option_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -3845,10 +3879,10 @@ Deletes a Product's `Option`, based on the product_id and option_id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-option_id|path|integer|true|The ID of the `Option`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+option_id|path|integer|The ID of the `Option`.
 
 
 
@@ -3877,15 +3911,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers', headers=headers)
+
 
 print r.json()
 ````
@@ -3896,9 +3930,9 @@ Gets an array of `Modifier` objects.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
 
 
 
@@ -3926,8 +3960,8 @@ Status|Meaning|Description
         "checkbox_label": "string",
         "date_limited": true,
         "date_limit_mode": "earliest",
-        "date_earliest_value": "2017-02-22",
-        "date_latest_value": "2017-02-22",
+        "date_earliest_value": "2017-02-23",
+        "date_latest_value": "2017-02-23",
         "file_types_mode": "specific",
         "file_types_supported": [
           "string"
@@ -4006,15 +4040,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'Modifier':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -4025,10 +4064,10 @@ Creates a `Modifier`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-Modifier|body|ModifierPost|true|A `Modifier` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+Modifier|body|ModifierPost|A `Modifier` object.
 
 
 
@@ -4050,8 +4089,8 @@ A `Modifier` object.
     "checkbox_label": "string",
     "date_limited": true,
     "date_limit_mode": "earliest",
-    "date_earliest_value": "2017-02-22",
-    "date_latest_value": "2017-02-22",
+    "date_earliest_value": "2017-02-23",
+    "date_latest_value": "2017-02-23",
     "file_types_mode": "specific",
     "file_types_supported": [
       "string"
@@ -4125,8 +4164,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-22",
-      "date_latest_value": "2017-02-22",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -4217,15 +4256,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -4237,10 +4276,10 @@ Gets a `Modifier` by product_id and modifier_id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-modifier_id|path|integer|true|The ID of the `Modifier`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+modifier_id|path|integer|The ID of the `Modifier`.
 
 
 
@@ -4272,8 +4311,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-22",
-      "date_latest_value": "2017-02-22",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -4348,17 +4387,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -4370,11 +4409,11 @@ Updates an Product's `Modifier` based on the product_id and modifier_id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-modifier_id|path|integer|true|The ID of the `Modifier`.
-modifier|body|ModifierPut|true|A BigCommerce `Modifier` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+modifier_id|path|integer|The ID of the `Modifier`.
+modifier|body|ModifierPut|A BigCommerce `Modifier` object.
 
 
 
@@ -4399,8 +4438,8 @@ A BigCommerce `Modifier` object.
     "checkbox_label": "string",
     "date_limited": true,
     "date_limit_mode": "earliest",
-    "date_earliest_value": "2017-02-22",
-    "date_latest_value": "2017-02-22",
+    "date_earliest_value": "2017-02-23",
+    "date_latest_value": "2017-02-23",
     "file_types_mode": "specific",
     "file_types_supported": [
       "string"
@@ -4473,8 +4512,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-22",
-      "date_latest_value": "2017-02-22",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -4565,15 +4604,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -4585,10 +4624,10 @@ Deletes a Product's `Modifier` based on the product_id and modifier_id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-modifier_id|path|integer|true|The ID of the `Modifier`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+modifier_id|path|integer|The ID of the `Modifier`.
 
 
 
@@ -4617,15 +4656,22 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "multipart/form-data",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'multipart/form-data',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'undefined':'undefined'
+	'value_id':'integer'
+	'undefined':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -4636,12 +4682,12 @@ Adds an image to a modifier value; the image will show on the storefront when th
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-modifier_id|path|integer|true|The ID of the `Modifier`.
-value_id|path|integer|true|The ID of the `Modifier`.
-image_file|formData|file|true|An image file. Supported MIME types include GIF, JPEG, and PNG.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+modifier_id|path|integer|The ID of the `Modifier`.
+value_id|path|integer|The ID of the `Modifier`.
+image_file|formData|file|An image file. Supported MIME types include GIF, JPEG, and PNG.
 
 
 
@@ -4710,15 +4756,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image', headers=headers)
+
 
 print r.json()
 ````
@@ -4729,11 +4775,11 @@ Deletes the image applied to show when the modifier value is selected
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-modifier_id|path|integer|true|The ID of the `Modifier`.
-value_id|path|integer|true|The ID of the `Modifier`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+modifier_id|path|integer|The ID of the `Modifier`.
+value_id|path|integer|The ID of the `Modifier`.
 
 
 
@@ -4764,15 +4810,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules', headers=headers)
+
 
 print r.json()
 ````
@@ -4783,9 +4829,9 @@ Gets an array of `ComplexRule` objects.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
 
 
 
@@ -4860,15 +4906,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'ComplexRule':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -4879,10 +4930,10 @@ Creates a `ComplexRule`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-ComplexRule|body|ComplexRulePost|true|`ComplexRule` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+ComplexRule|body|ComplexRulePost|`ComplexRule` object.
 
 
 
@@ -5005,15 +5056,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules/{complex_rule_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules/{complex_rule_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -5025,10 +5076,10 @@ Gets a `ComplexRule` by product_id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-complex_rule_id|path|integer|true|The ID of the `ComplexRule`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+complex_rule_id|path|integer|The ID of the `ComplexRule`.
 
 
 
@@ -5103,17 +5154,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules/{complex_rule_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -5125,11 +5176,11 @@ Updates an Product's `ComplexRule`, based on the `product_id` and `complex_rule_
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-complex_rule_id|path|integer|true|The ID of the `ComplexRule`.
-ComplexRule|body|ComplexRulePut|true|`ComplexRule` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+complex_rule_id|path|integer|The ID of the `ComplexRule`.
+ComplexRule|body|ComplexRulePut|`ComplexRule` object.
 
 
 
@@ -5256,15 +5307,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules/{complex_rule_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules/{complex_rule_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -5276,10 +5327,10 @@ Deletes a Product's `ComplexRule`, based on the `product_id` and `complex_rule_i
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-complex_rule_id|path|integer|true|The ID of the `ComplexRule`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+complex_rule_id|path|integer|The ID of the `ComplexRule`.
 
 
 
@@ -5308,15 +5359,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields', headers=headers)
+
 
 print r.json()
 ````
@@ -5328,13 +5379,13 @@ Gets a `Metafield` object list, by `product_id`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-page|query|integer|false|Control the page in a limited list of products.
-limit|query|integer|false|Control the items per page.
-key|query|string|false|Filter based on a metafield's key.
-namespace|query|string|false|Filter based on a metafield's key.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+page|query|integer|Control the page in a limited list of products.
+limit|query|integer|Control the items per page.
+key|query|string|Filter based on a metafield's key.
+namespace|query|string|Filter based on a metafield's key.
 
 
 
@@ -5376,8 +5427,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-22T19:22:50Z",
-      "updated_at": "2017-02-22T19:22:50Z"
+      "created_at": "2017-02-23T00:48:56Z",
+      "updated_at": "2017-02-23T00:48:56Z"
     }
   ],
   "meta": {
@@ -5414,15 +5465,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'Metafield':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -5433,10 +5489,10 @@ Creates a product `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-Metafield|body|MetafieldPost|true|A `Metafield` object.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+Metafield|body|MetafieldPost|A `Metafield` object.
 
 
 
@@ -5483,8 +5539,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -5525,15 +5581,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields/{metafield_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields/{metafield_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -5545,10 +5601,10 @@ Gets a `Metafield`, by `product_id`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
+metafield_id|path|number|The ID of the `Metafield`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
 
 
 
@@ -5580,8 +5636,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -5606,17 +5662,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields/{metafield_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -5627,11 +5683,11 @@ Updates a `Metafield` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
-Metafield|body|MetafieldPut|true|A `Metafield` object.
+metafield_id|path|number|The ID of the `Metafield`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
+Metafield|body|MetafieldPut|A `Metafield` object.
 
 
 
@@ -5680,8 +5736,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -5706,15 +5762,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields/{metafield_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields/{metafield_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -5726,10 +5782,10 @@ Deletes a `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-product_id|path|integer|true|The ID of the `Product` the resource belongs to.
+metafield_id|path|number|The ID of the `Metafield`.
+product_id|path|integer|The ID of the `Product` the resource belongs to.
 
 
 
@@ -5758,15 +5814,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories', headers=headers)
+
 
 print r.json()
 ````
@@ -5778,15 +5834,15 @@ Returns a paginated categories collection from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-name|query|string|false|Filter items by name.
-parent_id|query|integer|false|Filter items by parent_id.
-page_title|query|string|false|Filter items by page_title.
-keyword|query|string|false|Filter items by keywords.
-is_visible|query|integer|false|Filter items by is_visible.
-page|query|integer|false|Control the page in a limited list of products.
-limit|query|integer|false|Control the items per page.
+name|query|string|Filter items by name.
+parent_id|query|integer|Filter items by parent_id.
+page_title|query|string|Filter items by page_title.
+keyword|query|string|Filter items by keywords.
+is_visible|query|integer|Filter items by is_visible.
+page|query|integer|Control the page in a limited list of products.
+limit|query|integer|Control the items per page.
 
 
 
@@ -5872,15 +5928,19 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories', headers=headers, params={
-  
+	
+	'category':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -5892,9 +5952,9 @@ Creates a `Category` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-category|body|CategoryPost|true|A BigCommerce `Category` object.
+category|body|CategoryPost|A BigCommerce `Category` object.
 
 
 
@@ -6002,15 +6062,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories', headers=headers)
+
 
 print r.json()
 ````
@@ -6022,13 +6082,13 @@ Deletes a product or products from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-name|query|string|false|Filter items by name.
-parent_id|query|integer|false|Filter items by parent_id.
-page_title|query|string|false|Filter items by page_title.
-keyword|query|string|false|Filter items by keywords.
-is_visible|query|integer|false|Filter items by is_visible.
+name|query|string|Filter items by name.
+parent_id|query|integer|Filter items by parent_id.
+page_title|query|string|Filter items by page_title.
+keyword|query|string|Filter items by keywords.
+is_visible|query|integer|Filter items by is_visible.
 
 
 
@@ -6066,15 +6126,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -6086,9 +6146,9 @@ Returns a `Category` from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-category_id|path|number|true|The ID of the `Category` to which the resource belongs.
+category_id|path|number|The ID of the `Category` to which the resource belongs.
 
 
 
@@ -6153,17 +6213,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -6175,10 +6235,10 @@ Updates a `Category` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-category_id|path|number|true|The ID of the `Category` to which the resource belongs.
-category|body|CategoryPut|true|A BigCommerce `Category` object.
+category_id|path|number|The ID of the `Category` to which the resource belongs.
+category|body|CategoryPut|A BigCommerce `Category` object.
 
 
 
@@ -6299,15 +6359,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -6319,9 +6379,9 @@ Deletes one or more `Category` objects from the BigCommerce catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-category_id|path|number|true|The ID of the `Category` to which the resource belongs.
+category_id|path|number|The ID of the `Category` to which the resource belongs.
 
 
 
@@ -6347,15 +6407,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields', headers=headers)
+
 
 print r.json()
 ````
@@ -6367,13 +6427,13 @@ Gets a `Metafield` object list, by category_id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-category_id|path|number|true|The ID of the `Category` to which the resource belongs.
-page|query|integer|false|Control the page in a limited list of products.
-limit|query|integer|false|Control the items per page.
-key|query|string|false|Filter based on a metafield's key.
-namespace|query|string|false|Filter based on a metafield's key.
+category_id|path|number|The ID of the `Category` to which the resource belongs.
+page|query|integer|Control the page in a limited list of products.
+limit|query|integer|Control the items per page.
+key|query|string|Filter based on a metafield's key.
+namespace|query|string|Filter based on a metafield's key.
 
 
 
@@ -6415,8 +6475,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-22T19:22:50Z",
-      "updated_at": "2017-02-22T19:22:50Z"
+      "created_at": "2017-02-23T00:48:56Z",
+      "updated_at": "2017-02-23T00:48:56Z"
     }
   ],
   "meta": {
@@ -6453,15 +6513,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'Metafield':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -6472,10 +6537,10 @@ Creates a product `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-category_id|path|number|true|The ID of the `Category` to which the resource belongs.
-Metafield|body|MetafieldPost|true|A `Metafield` object.
+category_id|path|number|The ID of the `Category` to which the resource belongs.
+Metafield|body|MetafieldPost|A `Metafield` object.
 
 
 
@@ -6522,8 +6587,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -6564,15 +6629,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields/{metafield_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields/{metafield_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -6584,10 +6649,10 @@ Gets a `Metafield` by category_id.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-category_id|path|number|true|The ID of the `Category` to which the resource belongs.
+metafield_id|path|number|The ID of the `Metafield`.
+category_id|path|number|The ID of the `Category` to which the resource belongs.
 
 
 
@@ -6619,8 +6684,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -6645,17 +6710,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields/{metafield_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -6666,11 +6731,11 @@ Updates a `Metafield` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-category_id|path|number|true|The ID of the `Category` to which the resource belongs.
-Metafield|body|MetafieldPut|true|A `Metafield` object.
+metafield_id|path|number|The ID of the `Metafield`.
+category_id|path|number|The ID of the `Category` to which the resource belongs.
+Metafield|body|MetafieldPut|A `Metafield` object.
 
 
 
@@ -6719,8 +6784,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -6745,15 +6810,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields/{metafield_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields/{metafield_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -6765,10 +6830,10 @@ Deletes a `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-category_id|path|number|true|The ID of the `Category` to which the resource belongs.
+metafield_id|path|number|The ID of the `Metafield`.
+category_id|path|number|The ID of the `Category` to which the resource belongs.
 
 
 
@@ -6797,15 +6862,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "multipart/form-data",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'multipart/form-data',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/image', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'undefined':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -6817,10 +6887,10 @@ Creates an image on a category. Publicly accessible URLs and files (form post) a
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-category_id|path|number|true|The ID of the `Category` to which the resource belongs.
-image_file|formData|file|true|An image file. Supported MIME types include GIF, JPEG, and PNG.
+category_id|path|number|The ID of the `Category` to which the resource belongs.
+image_file|formData|file|An image file. Supported MIME types include GIF, JPEG, and PNG.
 
 
 
@@ -6883,15 +6953,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/image', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/image', headers=headers)
+
 
 print r.json()
 ````
@@ -6903,9 +6973,9 @@ Deletes a `Category` image from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-category_id|path|number|true|The ID of the `Category` to which the resource belongs.
+category_id|path|number|The ID of the `Category` to which the resource belongs.
 
 
 
@@ -6931,15 +7001,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/tree', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/tree', headers=headers)
+
 
 print r.json()
 ````
@@ -6989,15 +7059,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands', headers=headers)
+
 
 print r.json()
 ````
@@ -7009,12 +7079,12 @@ Gets `Brand` objects.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-name|query|string|false|Filter items by name.
-page_title|query|string|false|Filter items by page_title.
-page|query|integer|false|Control the page in a limited list of products.
-limit|query|integer|false|Control the items per page.
+name|query|string|Filter items by name.
+page_title|query|string|Filter items by page_title.
+page|query|integer|Control the page in a limited list of products.
+limit|query|integer|Control the items per page.
 
 
 
@@ -7080,15 +7150,19 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands', headers=headers, params={
-  
+	
+	'Brand':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -7099,9 +7173,9 @@ Creates a `Brand` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-Brand|body|BrandPost|true|A `Brand` object.
+Brand|body|BrandPost|A `Brand` object.
 
 
 
@@ -7187,15 +7261,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands', headers=headers)
+
 
 print r.json()
 ````
@@ -7207,10 +7281,10 @@ Deletes one or more `Brand` objects from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-name|query|string|false|Filter items by name.
-page_title|query|string|false|Filter items by page_title.
+name|query|string|Filter items by name.
+page_title|query|string|Filter items by page_title.
 
 
 
@@ -7239,15 +7313,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -7258,9 +7332,9 @@ Gets a `Brand` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-brand_id|path|number|true|The ID of the `Brand` to which the resource belongs.
+brand_id|path|number|The ID of the `Brand` to which the resource belongs.
 
 
 
@@ -7314,17 +7388,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -7336,10 +7410,10 @@ Updates a `Brand` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-brand_id|path|number|true|The ID of the `Brand` to which the resource belongs.
-brand|body|BrandPut|true|Returns a `Brand` from the BigCommerce Catalog.
+brand_id|path|number|The ID of the `Brand` to which the resource belongs.
+brand|body|BrandPut|Returns a `Brand` from the BigCommerce Catalog.
 
 
 
@@ -7439,15 +7513,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -7459,9 +7533,9 @@ Deletes a `Brand` from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-brand_id|path|number|true|The ID of the `Brand` to which the resource belongs.
+brand_id|path|number|The ID of the `Brand` to which the resource belongs.
 
 
 
@@ -7487,15 +7561,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields', headers=headers)
+
 
 print r.json()
 ````
@@ -7507,13 +7581,13 @@ Gets a `Metafield` object list, by `category_id`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-brand_id|path|number|true|The ID of the `Brand` to which the resource belongs.
-page|query|integer|false|Control the page in a limited list of products.
-limit|query|integer|false|Control the items per page.
-key|query|string|false|Filter based on a metafield's key.
-namespace|query|string|false|Filter based on a metafield's key.
+brand_id|path|number|The ID of the `Brand` to which the resource belongs.
+page|query|integer|Control the page in a limited list of products.
+limit|query|integer|Control the items per page.
+key|query|string|Filter based on a metafield's key.
+namespace|query|string|Filter based on a metafield's key.
 
 
 
@@ -7555,8 +7629,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-22T19:22:50Z",
-      "updated_at": "2017-02-22T19:22:50Z"
+      "created_at": "2017-02-23T00:48:56Z",
+      "updated_at": "2017-02-23T00:48:56Z"
     }
   ],
   "meta": {
@@ -7593,15 +7667,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'Metafield':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -7612,10 +7691,10 @@ Creates a product `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-brand_id|path|number|true|The ID of the `Brand` to which the resource belongs.
-Metafield|body|MetafieldPost|true|A `Metafield` object.
+brand_id|path|number|The ID of the `Brand` to which the resource belongs.
+Metafield|body|MetafieldPost|A `Metafield` object.
 
 
 
@@ -7662,8 +7741,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -7704,15 +7783,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields/{metafield_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields/{metafield_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -7724,10 +7803,10 @@ Gets a `Metafield`, by `category_id`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-brand_id|path|number|true|The ID of the `Brand` to which the resource belongs.
+metafield_id|path|number|The ID of the `Metafield`.
+brand_id|path|number|The ID of the `Brand` to which the resource belongs.
 
 
 
@@ -7759,8 +7838,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -7785,17 +7864,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields/{metafield_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -7806,11 +7885,11 @@ Updates a `Metafield` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-brand_id|path|number|true|The ID of the `Brand` to which the resource belongs.
-Metafield|body|MetafieldPut|true|A `Metafield` object.
+metafield_id|path|number|The ID of the `Metafield`.
+brand_id|path|number|The ID of the `Brand` to which the resource belongs.
+Metafield|body|MetafieldPut|A `Metafield` object.
 
 
 
@@ -7859,8 +7938,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-22T19:22:50Z",
-    "updated_at": "2017-02-22T19:22:50Z"
+    "created_at": "2017-02-23T00:48:56Z",
+    "updated_at": "2017-02-23T00:48:56Z"
   },
   "meta": {}
 }
@@ -7885,15 +7964,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields/{metafield_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields/{metafield_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -7905,10 +7984,10 @@ Deletes a `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-metafield_id|path|number|true|The ID of the `Metafield`.
-brand_id|path|number|true|The ID of the `Brand` to which the resource belongs.
+metafield_id|path|number|The ID of the `Metafield`.
+brand_id|path|number|The ID of the `Brand` to which the resource belongs.
 
 
 
@@ -7937,15 +8016,20 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "multipart/form-data",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'multipart/form-data',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/image', headers=headers, params={
-  
+	
+	'undefined':'undefined',
+	'undefined':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -7957,10 +8041,10 @@ Creates an image on a `Brand`. Publicly accessible URLs and files (form post) ar
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-brand_id|path|number|true|The ID of the `Brand` to which the resource belongs.
-image_file|formData|file|true|An image file. Supported MIME types include GIF, JPEG, and PNG.
+brand_id|path|number|The ID of the `Brand` to which the resource belongs.
+image_file|formData|file|An image file. Supported MIME types include GIF, JPEG, and PNG.
 
 
 
@@ -8023,15 +8107,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/image', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/image', headers=headers)
+
 
 print r.json()
 ````
@@ -8043,9 +8127,9 @@ Deletes a `Brand` image from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-brand_id|path|number|true|The ID of the `Brand` to which the resource belongs.
+brand_id|path|number|The ID of the `Brand` to which the resource belongs.
 
 
 
@@ -8070,15 +8154,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/variants', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/variants', headers=headers)
+
 
 print r.json()
 ````
@@ -8090,12 +8174,12 @@ Returns a `Variant` object list from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-id|query|integer|false|Filter items by id.
-sku|query|string|false|Filter items by sku.
-page|query|integer|false|Control the page in a limited list of products.
-limit|query|integer|false|Control the items per page.
+id|query|integer|Filter items by id.
+sku|query|string|Filter items by sku.
+page|query|integer|Control the page in a limited list of products.
+limit|query|integer|Control the items per page.
 
 
 
@@ -8184,15 +8268,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/summary', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/summary', headers=headers)
+
 
 print r.json()
 ````
@@ -8234,15 +8318,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers', headers=headers)
+
 
 print r.json()
 ````
@@ -8254,17 +8338,17 @@ Returns a paginated Subscribers collection.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-email|query|string|false|Filter items by email.
-first_name|query|string|false|Filter items by first_name.
-last_name|query|string|false|Filter items by last_name.
-source|query|string|false|Filter items by source.
-order_id|query|integer|false|Filter items by order_id.
-date_created|query|string|false|Filter items by date_created.
-date_modified|query|string|false|Filter items by date_modified.
-page|query|integer|false|Control the page in a limited list of products.
-limit|query|integer|false|Control the items per page.
+email|query|string|Filter items by email.
+first_name|query|string|Filter items by first_name.
+last_name|query|string|Filter items by last_name.
+source|query|string|Filter items by source.
+order_id|query|integer|Filter items by order_id.
+date_created|query|string|Filter items by date_created.
+date_modified|query|string|Filter items by date_modified.
+page|query|integer|Control the page in a limited list of products.
+limit|query|integer|Control the items per page.
 
 
 
@@ -8344,15 +8428,19 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers', headers=headers, params={
-  
+	
+	'subscriber':'undefined'
+	
 })
+
 
 print r.json()
 ````
@@ -8364,9 +8452,9 @@ Creates a `Subscriber` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-subscriber|body|SubscriberPost|true|`Subscriber` object.
+subscriber|body|SubscriberPost|`Subscriber` object.
 
 
 
@@ -8449,15 +8537,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers', headers=headers)
+
 
 print r.json()
 ````
@@ -8469,15 +8557,15 @@ Deletes a Subscriber or Subscribers from BigCommerce Customers.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-email|query|string|false|Filter items by email.
-first_name|query|string|false|Filter items by first_name.
-last_name|query|string|false|Filter items by last_name.
-source|query|string|false|Filter items by source.
-order_id|query|integer|false|Filter items by order_id.
-date_created|query|string|false|Filter items by date_created.
-date_modified|query|string|false|Filter items by date_modified.
+email|query|string|Filter items by email.
+first_name|query|string|Filter items by first_name.
+last_name|query|string|Filter items by last_name.
+source|query|string|Filter items by source.
+order_id|query|integer|Filter items by order_id.
+date_created|query|string|Filter items by date_created.
+date_modified|query|string|Filter items by date_modified.
 
 
 
@@ -8521,15 +8609,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers/{subscriber_id}', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers/{subscriber_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -8540,9 +8628,9 @@ Gets `Subscriber` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-subscriber_id|path|number|true|The ID of the `Subscriber` requested.
+subscriber_id|path|number|The ID of the `Subscriber` requested.
 
 
 
@@ -8595,17 +8683,17 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
+
 r = requests.put('https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers/{subscriber_id}', headers=headers, params={
-  
-  success = "true"
-  
+
 })
+
 
 print r.json()
 ````
@@ -8617,10 +8705,10 @@ Updates a `Subscriber` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-subscriber_id|path|number|true|The ID of the `Subscriber` requested.
-subscriber|body|SubscriberPut|true|Returns a `Subscriber` object.
+subscriber_id|path|number|The ID of the `Subscriber` requested.
+subscriber|body|SubscriberPut|Returns a `Subscriber` object.
 
 
 
@@ -8716,15 +8804,15 @@ This operation does not require authentication
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers/{subscriber_id}', headers=headers, params={
-  
-})
+
+r = requests.delete('https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers/{subscriber_id}', headers=headers)
+
 
 print r.json()
 ````
@@ -8736,9 +8824,9 @@ Deletes a `Subscriber` object.
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-subscriber_id|path|number|true|The ID of the `Subscriber` requested.
+subscriber_id|path|number|The ID of the `Subscriber` requested.
 
 
 

@@ -1,6 +1,6 @@
 var fs = require( 'fs' );
 var path = require( 'path' );
-var process = require( "process" );
+var process = require( 'process' );
 var converter = require('widdershins');
 var yaml = require('js-yaml');
 
@@ -60,7 +60,7 @@ function generateMdFromSwagger(startPath, endPath){
             var generated = converter.convert(swagger,options);
 
             // Warning: hacky bullshit
-            generated = generated.replace('language_tabs:', 'layout: "apitwocolumn"\nlanguage_tabs:');
+            generated = generated.replace('language_tabs:', 'layout: "layout"\nlanguage_tabs:');
             // end hacky bullshit
             
             fs.writeFileSync(newFilename, generated, 'utf8')

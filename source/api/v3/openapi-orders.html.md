@@ -1,6 +1,6 @@
 ---
 title: BigCommerce Orders API v3.0.0
-layout: "apitwocolumn"
+layout: "layout"
 language_tabs:
   - python
 toc_footers: []
@@ -13,9 +13,7 @@ highlight_theme: darkula
 
 A Swagger Document for the BigCommmerce API V3.
 
-Base URL = https://api.bigcommerce.com/stores/{{store_id}}/v3
 
-<a href="http://www.bigcommerce.com/terms">Terms of service</a>
 
 
 
@@ -31,15 +29,15 @@ BigCommerce Orders API Definition.
 import requests
 
 headers = {
-	'Content-Type': "application/json",
-	'Accept': "application/json",
-	'X-Auth-Client': "SampleClientCode",
-	'X-Auth-Token': "8675309"
+	'Content-Type': 'application/json',
+	'Accept': 'application/json',
+	'X-Auth-Client': 'SampleClientCode',
+	'X-Auth-Token': '8675309'
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions', headers=headers, params={
-  
-})
+
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions', headers=headers)
+
 
 print r.json()
 ````
@@ -51,9 +49,9 @@ Returns a paginated collection of `Transaction` objects related to a BigCommerce
 
 ### Parameters
 
-Parameter|In|Type|Required|Description
+Parameter|In|Type|Description
 ---|---|---|---|---|
-order_id|path|number|true|The ID of the `Order` to which the transactions belong.
+order_id|path|number|The ID of the `Order` to which the transactions belong.
 
 
 

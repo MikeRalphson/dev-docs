@@ -1,0 +1,7 @@
+# {{=data.header.title}}
+
+{{? data.openapi.info.description}}{{=data.openapi.info.description}}{{?}}
+
+
+{{? data.openapi.info.contact}}{{? data.openapi.info.contact.email}}Email: <a href="mailto:{{=data.openapi.info.contact.email}}">{{=data.contactName}}</a>{{?}}{{? data.openapi.info.contact.url}}Web: <a href="{{=data.openapi.info.contact.url}}">{{=data.contactName}}</a>{{?}}{{?}}
+{{? data.openapi.info.license}}{{? data.openapi.info.license.url}}License: <a href="{{=data.openapi.info.license.url}}">{{=data.openapi.info.license.name}}</a>{{??}}License: {{=data.openapi.info.license.name}}{{?}}{{?}}
