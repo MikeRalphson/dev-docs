@@ -1,8 +1,8 @@
 ---
 title: Order API v2.0.0
-layout: "apitwocolumn"
+layout: "layout"
 language_tabs:
-  - ''
+  - ruby
 toc_footers: []
 includes: []
 search: true
@@ -24,6 +24,24 @@ Base URL = ://undefined/
 ## POST /billing
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post '://undefined/billing', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		billingData:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 Add / Update the billing address in quote object
 
@@ -60,6 +78,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get '://undefined/cart', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 *Retrieve cart data*
 
 Retrieves a cart, which is the composition of set of items
@@ -85,6 +115,23 @@ This operation does not require authentication
 ## POST /coupon
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post '://undefined/coupon', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		couponCode:'undefined',
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 Adding coupon or gift certificate code to the cart
 
@@ -121,6 +168,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete '://undefined/coupon/{couponCode}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 Removing coupon or gift certificate code from the cart
 
 ### Parameters
@@ -150,6 +209,29 @@ This operation does not require authentication
 ## POST /customer
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post '://undefined/customer', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		undefined:'undefined'
+		undefined:'undefined'
+		undefined:'undefined'
+		undefined:'undefined'
+		undefined:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 Associate the quote object to a customer. Parameters are comma separated as values against `includes` key. For example, `/quote?includes=customer,shippingOptions`
 
@@ -188,6 +270,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get '://undefined/customer', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 currently any GET request to /customer end point will result to a `405` response because `getAction()` method does't exists
 
 ### Parameters
@@ -217,6 +311,18 @@ This operation does not require authentication
 ## DELETE /customer
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete '://undefined/customer', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 Remove customer information from the quote.
 
@@ -251,6 +357,23 @@ This operation does not require authentication
 ## POST /order
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post '://undefined/order', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		Data:'undefined',
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 Used to create an order (currently we use session to retrieve quote data)
 
@@ -295,6 +418,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get '://undefined/order/{orderId}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 *Retrieve order data*
 
 Retrieves an order, which is the composition of set of items
@@ -326,6 +461,23 @@ This operation does not require authentication
 ## POST /order/{orderId}
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post '://undefined/order/{orderId}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		orderId:'integer',
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 Update the order. Finalize in case the order has been set previously in checkout
 
@@ -421,6 +573,24 @@ This operation does not require authentication
 ## POST /order/{orderId}/payment
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post '://undefined/order/{orderId}/payment', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		orderId:'integer',
+		paymentData:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 Update the payment and order status from payment service (BigPay) & finalize the order. Requires HAWK authentication.
 
@@ -536,6 +706,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get '://undefined/payments', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 Retrieve a list of existing payment methods
 
 ### Responses
@@ -556,6 +738,18 @@ This operation does not require authentication
 ## GET /payments/{providerId}
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get '://undefined/payments/{providerId}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 Retrieve a single, existing payment method
 
@@ -585,6 +779,18 @@ This operation does not require authentication
 ## GET /quote
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get '://undefined/quote', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 Parameters are comma separated as values against `includes` key. For example, `/quote?includes=customer,shippingOptions`
 
@@ -620,6 +826,26 @@ This operation does not require authentication
 ## POST /shipping
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post '://undefined/shipping', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		undefined:'undefined'
+		shippingData:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 Add / Update the shipping address in quote object
 
@@ -658,6 +884,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get '://undefined/shippingOptions', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 *Retrieve Shipping Options*
 
 Retrieves a list of all available shipping options for the current quote
@@ -689,6 +927,23 @@ This operation does not require authentication
 ## PUT /shippingOptions
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put '://undefined/shippingOptions', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		ShippingOptionRequestData:'undefined',
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 *Set Shipping Option*
 

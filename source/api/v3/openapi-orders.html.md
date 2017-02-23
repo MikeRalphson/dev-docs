@@ -1,8 +1,8 @@
 ---
 title: BigCommerce Orders API v3.0.0
-layout: "apitwocolumn"
+layout: "layout"
 language_tabs:
-  - ''
+  - ruby
 toc_footers: []
 includes: []
 search: true
@@ -26,6 +26,18 @@ BigCommerce Orders API Definition.
 ## getTransactions
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /orders/{order_id}/transactions`
 

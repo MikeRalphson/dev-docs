@@ -1,8 +1,8 @@
 ---
 title: BigCommerce Catalog API v3.0.0b
-layout: "apitwocolumn"
+layout: "layout"
 language_tabs:
-  - ''
+  - ruby
 toc_footers: []
 includes: []
 search: true
@@ -26,6 +26,18 @@ BigCommerce Catalog API Definition.
 ## getProducts
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products`
 
@@ -348,6 +360,23 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		product:'undefined',
+		
+  }
+
+
+p JSON.parse(result)
+````
+
 `POST /catalog/products`
 
 Creates a `Product` in the BigCommerce Catalog.
@@ -649,6 +678,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/products`
 
 Deletes one or more `Product` objects from the BigCommerce Catalog.
@@ -735,6 +776,18 @@ This operation does not require authentication
 ## getProductById
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products/{product_id}`
 
@@ -929,6 +982,24 @@ This operation does not require authentication
 ## updateProduct
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		product:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/products/{product_id}`
 
@@ -1240,6 +1311,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/products/{product_id}`
 
 Deletes a `Product` object from the BigCommerce Catalog.
@@ -1270,6 +1353,18 @@ This operation does not require authentication
 ## getProductImages
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products/{product_id}/images`
 
@@ -1346,6 +1441,24 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		productImage:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
+
 `POST /catalog/products/{product_id}/images`
 
 Creates an image on a product. Publically accessible URLs and files (form post) are valid parameters.
@@ -1421,6 +1534,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images/{image_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `GET /catalog/products/{product_id}/images/{image_id}`
 
 Gets image on a product.
@@ -1484,6 +1609,25 @@ This operation does not require authentication
 ## updateProductImage
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images/{image_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		productImage:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/products/{product_id}/images/{image_id}`
 
@@ -1562,6 +1706,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/images/{image_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/products/{product_id}/images/{image_id}`
 
 Deletes a `ProductImage` in the BigCommerce Catalog.
@@ -1596,6 +1752,18 @@ This operation does not require authentication
 ## getProductVideos
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products/{product_id}/videos`
 
@@ -1655,6 +1823,24 @@ This operation does not require authentication
 ## createProductVideo
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		productVideo:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/products/{product_id}/videos`
 
@@ -1727,6 +1913,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos/{video_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `GET /catalog/products/{product_id}/videos/{video_id}`
 
 Gets video on a product.
@@ -1786,6 +1984,25 @@ This operation does not require authentication
 ## updateProductVideo
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos/{video_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		productVideo:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/products/{product_id}/videos/{video_id}`
 
@@ -1860,6 +2077,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/videos/{video_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/products/{product_id}/videos/{video_id}`
 
 Deletes a `ProductVideo` in the BigCommerce Catalog.
@@ -1894,6 +2123,18 @@ This operation does not require authentication
 ## getVariantsByProductId
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products/{product_id}/variants`
 
@@ -1987,6 +2228,24 @@ This operation does not require authentication
 ## createVariant
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		Variant:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/products/{product_id}/variants`
 
@@ -2087,6 +2346,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `GET /catalog/products/{product_id}/variants/{variant_id}`
 
 Gets a `Variant` object.
@@ -2161,6 +2432,25 @@ This operation does not require authentication
 ## updateVariant
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		Variant:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/products/{product_id}/variants/{variant_id}`
 
@@ -2258,6 +2548,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/products/{product_id}/variants/{variant_id}`
 
 Deletes a `Variant`.
@@ -2292,6 +2594,18 @@ This operation does not require authentication
 ## getVariantMetafieldsByProductIdAndVariantId
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products/{product_id}/variants/{variant_id}/metafields`
 
@@ -2352,8 +2666,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-07T19:44:56Z",
-      "updated_at": "2017-02-07T19:44:56Z"
+      "created_at": "2017-02-23T01:03:32Z",
+      "updated_at": "2017-02-23T01:03:32Z"
     }
   ],
   "meta": {
@@ -2385,6 +2699,25 @@ This operation does not require authentication
 ## createVariantMetafield
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		Metafield:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/products/{product_id}/variants/{variant_id}/metafields`
 
@@ -2446,8 +2779,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -2483,6 +2816,18 @@ This operation does not require authentication
 ## getVariantMetafieldByProductIdAndVariantId
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}`
 
@@ -2530,8 +2875,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -2551,6 +2896,26 @@ This operation does not require authentication
 ## updateVariantMetafield
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		undefined:'undefined'
+		Metafield:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}`
 
@@ -2615,8 +2980,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -2636,6 +3001,18 @@ This operation does not require authentication
 ## deleteVariantMetafieldById
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `DELETE /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}`
 
@@ -2675,6 +3052,25 @@ This operation does not require authentication
 ## createVariantImage
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/variants/{variant_id}/image', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		undefined:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/products/{product_id}/variants/{variant_id}/image`
 
@@ -2746,6 +3142,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `GET /catalog/products/{product_id}/options`
 
 Gets an array of `Option` objects.
@@ -2786,8 +3194,8 @@ Status|Meaning|Description
         "checkbox_label": "string",
         "date_limited": true,
         "date_limit_mode": "earliest",
-        "date_earliest_value": "2017-02-07",
-        "date_latest_value": "2017-02-07",
+        "date_earliest_value": "2017-02-23",
+        "date_latest_value": "2017-02-23",
         "file_types_mode": "specific",
         "file_types_supported": [
           "string"
@@ -2852,6 +3260,24 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		Option:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
+
 `POST /catalog/products/{product_id}/options`
 
 Creates an `Option`.
@@ -2885,8 +3311,8 @@ An `Option` object.
     "checkbox_label": "string",
     "date_limited": true,
     "date_limit_mode": "earliest",
-    "date_earliest_value": "2017-02-07",
-    "date_latest_value": "2017-02-07",
+    "date_earliest_value": "2017-02-23",
+    "date_latest_value": "2017-02-23",
     "file_types_mode": "specific",
     "file_types_supported": [
       "string"
@@ -2946,8 +3372,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-07",
-      "date_latest_value": "2017-02-07",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -3016,6 +3442,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options/{option_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `GET /catalog/products/{product_id}/options/{option_id}`
 
 Gets `Option` object by product ID and option id.
@@ -3059,8 +3497,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-07",
-      "date_latest_value": "2017-02-07",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -3113,6 +3551,25 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options/{option_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		option:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
+
 `PUT /catalog/products/{product_id}/options/{option_id}`
 
 Updates a Product's `Option`, based on the product_id and option_id.
@@ -3151,8 +3608,8 @@ A BigCommerce `Option` object.
     "checkbox_label": "string",
     "date_limited": true,
     "date_limit_mode": "earliest",
-    "date_earliest_value": "2017-02-07",
-    "date_latest_value": "2017-02-07",
+    "date_earliest_value": "2017-02-23",
+    "date_latest_value": "2017-02-23",
     "file_types_mode": "specific",
     "file_types_supported": [
       "string"
@@ -3212,8 +3669,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-07",
-      "date_latest_value": "2017-02-07",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -3282,6 +3739,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/options/{option_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/products/{product_id}/options/{option_id}`
 
 Deletes a Product's `Option`, based on the product_id and option_id.
@@ -3316,6 +3785,18 @@ This operation does not require authentication
 ## getModifiers
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products/{product_id}/modifiers`
 
@@ -3353,8 +3834,8 @@ Status|Meaning|Description
         "checkbox_label": "string",
         "date_limited": true,
         "date_limit_mode": "earliest",
-        "date_earliest_value": "2017-02-07",
-        "date_latest_value": "2017-02-07",
+        "date_earliest_value": "2017-02-23",
+        "date_latest_value": "2017-02-23",
         "file_types_mode": "specific",
         "file_types_supported": [
           "string"
@@ -3429,6 +3910,24 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		Modifier:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
+
 `POST /catalog/products/{product_id}/modifiers`
 
 Creates a `Modifier`.
@@ -3460,8 +3959,8 @@ A `Modifier` object.
     "checkbox_label": "string",
     "date_limited": true,
     "date_limit_mode": "earliest",
-    "date_earliest_value": "2017-02-07",
-    "date_latest_value": "2017-02-07",
+    "date_earliest_value": "2017-02-23",
+    "date_latest_value": "2017-02-23",
     "file_types_mode": "specific",
     "file_types_supported": [
       "string"
@@ -3535,8 +4034,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-07",
-      "date_latest_value": "2017-02-07",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -3623,6 +4122,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `GET /catalog/products/{product_id}/modifiers/{modifier_id}`
 
 Gets a `Modifier` by product_id and modifier_id.
@@ -3665,8 +4176,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-07",
-      "date_latest_value": "2017-02-07",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -3737,6 +4248,25 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		modifier:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
+
 `PUT /catalog/products/{product_id}/modifiers/{modifier_id}`
 
 Updates an Product's `Modifier` based on the product_id and modifier_id.
@@ -3773,8 +4303,8 @@ A BigCommerce `Modifier` object.
     "checkbox_label": "string",
     "date_limited": true,
     "date_limit_mode": "earliest",
-    "date_earliest_value": "2017-02-07",
-    "date_latest_value": "2017-02-07",
+    "date_earliest_value": "2017-02-23",
+    "date_latest_value": "2017-02-23",
     "file_types_mode": "specific",
     "file_types_supported": [
       "string"
@@ -3847,8 +4377,8 @@ Status|Meaning|Description
       "checkbox_label": "string",
       "date_limited": true,
       "date_limit_mode": "earliest",
-      "date_earliest_value": "2017-02-07",
-      "date_latest_value": "2017-02-07",
+      "date_earliest_value": "2017-02-23",
+      "date_latest_value": "2017-02-23",
       "file_types_mode": "specific",
       "file_types_supported": [
         "string"
@@ -3935,6 +4465,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/products/{product_id}/modifiers/{modifier_id}`
 
 Deletes a Product's `Modifier` based on the product_id and modifier_id.
@@ -3969,6 +4511,26 @@ This operation does not require authentication
 ## createModifierImage
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		value_id:'integer'
+		undefined:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image`
 
@@ -4046,6 +4608,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image`
 
 Deletes the image applied to show when the modifier value is selected
@@ -4082,6 +4656,18 @@ This operation does not require authentication
 ## getComplexRules
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products/{product_id}/complex-rules`
 
@@ -4161,6 +4747,24 @@ This operation does not require authentication
 ## createComplexRule
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		ComplexRule:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/products/{product_id}/complex-rules`
 
@@ -4290,6 +4894,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules/{complex_rule_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `GET /catalog/products/{product_id}/complex-rules/{complex_rule_id}`
 
 Gets a `ComplexRule` by product_id.
@@ -4370,6 +4986,25 @@ This operation does not require authentication
 ## updateComplexRule
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules/{complex_rule_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		ComplexRule:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/products/{product_id}/complex-rules/{complex_rule_id}`
 
@@ -4505,6 +5140,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/complex-rules/{complex_rule_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/products/{product_id}/complex-rules/{complex_rule_id}`
 
 Deletes a Product's `ComplexRule`, based on the `product_id` and `complex_rule_id`.
@@ -4539,6 +5186,18 @@ This operation does not require authentication
 ## getProductMetafieldsByProductId
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products/{product_id}/metafields`
 
@@ -4595,8 +5254,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-07T19:44:56Z",
-      "updated_at": "2017-02-07T19:44:56Z"
+      "created_at": "2017-02-23T01:03:32Z",
+      "updated_at": "2017-02-23T01:03:32Z"
     }
   ],
   "meta": {
@@ -4628,6 +5287,24 @@ This operation does not require authentication
 ## createProductMetafield
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		Metafield:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/products/{product_id}/metafields`
 
@@ -4685,8 +5362,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -4722,6 +5399,18 @@ This operation does not require authentication
 ## getProductMetafieldByProductId
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/products/{product_id}/metafields/{metafield_id}`
 
@@ -4765,8 +5454,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -4786,6 +5475,25 @@ This operation does not require authentication
 ## updateProductMetafield
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		Metafield:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/products/{product_id}/metafields/{metafield_id}`
 
@@ -4846,8 +5554,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -4867,6 +5575,18 @@ This operation does not require authentication
 ## deleteProductMetafieldById
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/products/{product_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `DELETE /catalog/products/{product_id}/metafields/{metafield_id}`
 
@@ -4902,6 +5622,18 @@ This operation does not require authentication
 ## getCategories
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/categories`
 
@@ -4999,6 +5731,23 @@ This operation does not require authentication
 ## createCategory
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		category:'undefined',
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/categories`
 
@@ -5113,6 +5862,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/categories`
 
 Deletes a product or products from the BigCommerce Catalog.
@@ -5159,6 +5920,18 @@ This operation does not require authentication
 ## getCategoryById
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/categories/{category_id}`
 
@@ -5229,6 +6002,24 @@ This operation does not require authentication
 ## updateCategory
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		category:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/categories/{category_id}`
 
@@ -5357,6 +6148,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/categories/{category_id}`
 
 Deletes one or more `Category` objects from the BigCommerce catalog.
@@ -5387,6 +6190,18 @@ This operation does not require authentication
 ## getCategoryMetafieldsByCategoryId
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/categories/{category_id}/metafields`
 
@@ -5443,8 +6258,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-07T19:44:56Z",
-      "updated_at": "2017-02-07T19:44:56Z"
+      "created_at": "2017-02-23T01:03:32Z",
+      "updated_at": "2017-02-23T01:03:32Z"
     }
   ],
   "meta": {
@@ -5476,6 +6291,24 @@ This operation does not require authentication
 ## createCategoryMetafield
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		Metafield:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/categories/{category_id}/metafields`
 
@@ -5533,8 +6366,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -5570,6 +6403,18 @@ This operation does not require authentication
 ## getCategoryMetafieldByCategoryId
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/categories/{category_id}/metafields/{metafield_id}`
 
@@ -5613,8 +6458,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -5634,6 +6479,25 @@ This operation does not require authentication
 ## updateCategoryMetafield
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		Metafield:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/categories/{category_id}/metafields/{metafield_id}`
 
@@ -5694,8 +6558,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -5715,6 +6579,18 @@ This operation does not require authentication
 ## deleteCategoryMetafieldById
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `DELETE /catalog/categories/{category_id}/metafields/{metafield_id}`
 
@@ -5750,6 +6626,24 @@ This operation does not require authentication
 ## createCategoryImage
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/image', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/categories/{category_id}/image`
 
@@ -5820,6 +6714,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/{category_id}/image', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/categories/{category_id}/image`
 
 Deletes a `Category` image from the BigCommerce Catalog.
@@ -5850,6 +6756,18 @@ This operation does not require authentication
 ## getCategoryTree
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/categories/tree', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/categories/tree`
 
@@ -5891,6 +6809,18 @@ This operation does not require authentication
 ## getBrands
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/brands`
 
@@ -5965,6 +6895,23 @@ This operation does not require authentication
 ## createBrand
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		Brand:'undefined',
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/brands`
 
@@ -6056,6 +7003,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/brands`
 
 Deletes one or more `Brand` objects from the BigCommerce Catalog.
@@ -6090,6 +7049,18 @@ This operation does not require authentication
 ## getBrandById
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/brands/{brand_id}`
 
@@ -6148,6 +7119,24 @@ This operation does not require authentication
 ## updateBrand
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		brand:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/brands/{brand_id}`
 
@@ -6255,6 +7244,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/brands/{brand_id}`
 
 Deletes a `Brand` from the BigCommerce Catalog.
@@ -6285,6 +7286,18 @@ This operation does not require authentication
 ## getBrandMetafieldsByBrandId
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/brands/{brand_id}/metafields`
 
@@ -6341,8 +7354,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-07T19:44:56Z",
-      "updated_at": "2017-02-07T19:44:56Z"
+      "created_at": "2017-02-23T01:03:32Z",
+      "updated_at": "2017-02-23T01:03:32Z"
     }
   ],
   "meta": {
@@ -6374,6 +7387,24 @@ This operation does not require authentication
 ## createBrandMetafield
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		Metafield:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/brands/{brand_id}/metafields`
 
@@ -6431,8 +7462,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -6468,6 +7499,18 @@ This operation does not require authentication
 ## getBrandMetafieldByBrandId
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/brands/{brand_id}/metafields/{metafield_id}`
 
@@ -6511,8 +7554,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -6532,6 +7575,25 @@ This operation does not require authentication
 ## updateBrandMetafield
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		Metafield:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /catalog/brands/{brand_id}/metafields/{metafield_id}`
 
@@ -6592,8 +7654,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-07T19:44:56Z",
-    "updated_at": "2017-02-07T19:44:56Z"
+    "created_at": "2017-02-23T01:03:32Z",
+    "updated_at": "2017-02-23T01:03:32Z"
   },
   "meta": {}
 }
@@ -6613,6 +7675,18 @@ This operation does not require authentication
 ## deleteBrandMetafieldById
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/metafields/{metafield_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `DELETE /catalog/brands/{brand_id}/metafields/{metafield_id}`
 
@@ -6648,6 +7722,24 @@ This operation does not require authentication
 ## createBrandImage
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/image', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		undefined:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `POST /catalog/brands/{brand_id}/image`
 
@@ -6718,6 +7810,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/brands/{brand_id}/image', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /catalog/brands/{brand_id}/image`
 
 Deletes a `Brand` image from the BigCommerce Catalog.
@@ -6747,6 +7851,18 @@ This operation does not require authentication
 ## getVariants
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/variants', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /catalog/variants`
 
@@ -6845,6 +7961,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/summary', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 Returns a lightweight inventory summary from the BigCommerce Catalog.
 
 
@@ -6877,6 +8005,18 @@ This operation does not require authentication
 ## getSubscribers
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /customers/subscribers`
 
@@ -6971,6 +8111,23 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.post 'https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		subscriber:'undefined',
+		
+  }
+
+
+p JSON.parse(result)
+````
+
 `POST /customers/subscribers`
 
 Creates a `Subscriber` object.
@@ -7059,6 +8216,18 @@ This operation does not require authentication
 
 > Code samples
 
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
+
 `DELETE /customers/subscribers`
 
 Deletes a Subscriber or Subscribers from BigCommerce Customers.
@@ -7113,6 +8282,18 @@ This operation does not require authentication
 ## getSubscriberById
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.get 'https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers/{subscriber_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `GET /customers/subscribers/{subscriber_id}`
 
@@ -7170,6 +8351,24 @@ This operation does not require authentication
 ## updateSubscriber
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.put 'https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers/{subscriber_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		
+		undefined:'undefined',
+		subscriber:'undefined'
+		
+  }
+
+
+p JSON.parse(result)
+````
 
 `PUT /customers/subscribers/{subscriber_id}`
 
@@ -7272,6 +8471,18 @@ This operation does not require authentication
 ## deleteSubscriberById
 
 > Code samples
+
+````ruby
+require 'rest-client'
+require 'json'
+
+
+
+result = RestClient.delete 'https://api.bigcommerce.com/stores/{{store_id}}/v3/customers/subscribers/{subscriber_id}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+
+
+p JSON.parse(result)
+````
 
 `DELETE /customers/subscribers/{subscriber_id}`
 

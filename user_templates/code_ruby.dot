@@ -1,17 +1,23 @@
 require 'rest-client'
 require 'json'
 
-result = RestClient.{{=data.method}} '{{=data.url}}', {content_type: :json, accept: :json, :X-Auth-Client => 'ClientID', :X-Auth-Token => 'AuthToken'}, params:
+
+{{? data.method === 'put'}}
+result = RestClient.{{=data.method}} '{{=data.url}}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
   {
-	  {{? data.method === 'put'}}
-	  success = "true"
-	  {{?? data.method === 'post'}}
-
-	  {{?? data.method === 'get'}}
-
-	  {{?? data.method == 'delete'}}
-	  
-	  {{?}}
+		{{? data.parameters.length-1 != index}}
+		{{~ data.parameters :p:index}}{{=p.name}}:'{{=p.type}}'{{? index == 0 }},{{?}}
+		{{~}}{{?}}
   }
+{{?? data.method === 'post'}}
+result = RestClient.{{=data.method}} '{{=data.url}}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}, params:
+  {
+		{{? data.parameters.length-1 != index}}
+		{{~ data.parameters :p:index}}{{=p.name}}:'{{=p.type}}'{{? index == 0 }},{{?}}
+		{{~}}{{?}}
+  }
+{{?? data.method === 'get' || 'delete'}}
+result = RestClient.{{=data.method}} '{{=data.url}}', {content_type: :json, accept: :json}, headers: {X-Auth-Client => 'ClientID', X-Auth-Token => 'AuthToken'}
+{{?}}
 
 p JSON.parse(result)
