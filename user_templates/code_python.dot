@@ -14,7 +14,7 @@ r = requests.{{=data.method}}('{{=data.url}}', headers=headers, params={
 {{?? data.method === 'post'}}
 r = requests.{{=data.method}}('{{=data.url}}', headers=headers, params={
 	{{? data.parameters.length}}
-	{{~ data.parameters :p:index}}'{{=p.name}}':'{{=p.type}}'{{? data.parameters.length-1 != index && index == 0 }},{{?}}
+	{{~ data.parameters :p:index}}'{{=p.name}}':'{{=p.safeType}}'{{? data.parameters.length-1 != index && index == 0 }},{{?}}
 	{{~}}{{?}}
 })
 {{?? data.method === 'get' || 'delete'}}

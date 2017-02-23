@@ -49,37 +49,8 @@ Returns a paginated collection of `Products` objects from the BigCommerce Catalo
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-id|query|integer|Filter items by id.
-name|query|string|Filter items by name.
-sku|query|string|Filter items by sku.
-upc|query|string|Filter items by upc.
-price|query|number|Filter items by price.
-weight|query|number|Filter items by weight.
-condition|query|integer|Filter items by condition.
-brand_id|query|integer|Filter items by brand_id.
-date_modified|query|string|Filter items by date_modified.
-date_last_imported|query|string|Filter items by date_last_imported.
-is_visible|query|integer|Filter items by is_visible.
-is_featured|query|integer|Filter items by is_featured.
-is_free_shipping|query|integer|Filter items by is_free_shipping.
-inventory_level|query|integer|Filter items by inventory_level.
-inventory_low|query|integer|Filter items by inventory_low; values: 1, 0.
-out_of_stock|query|integer|Filter items by out_of_stock. To enable the filter, pass `out_of_stock`=`1`.
-total_sold|query|integer|Filter items by total_sold.
-type|query|string|Filter items by type: `physical` or `digital`.
-categories|query|integer|Filter items by categories.
-keyword|query|string|Filter items by keywords found in the name, description, sku, keywords, or brand name.
-keyword_context|query|string|Set context for a product search.
-channel_id|query|integer|Filter items by channel.
-status|query|integer|Filter items by status.
-include|query|string|Include sub-resources on a product, with a comma-separated list. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`.
-availability|query|string|Filter items by availability. Values are: available, disabled, preorder.
-page|query|integer|Control the page in a limited list of products.
-limit|query|integer|Control the items per page.
-direction|query|string|Sort direction. Values are: asc, desc.
-sort|query|string|Field name to sort by.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -391,9 +362,8 @@ Creates a `Product` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product|body|ProductPost|A BigCommerce `Product` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -709,23 +679,8 @@ Deletes one or more `Product` objects from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-name|query|string|Filter items by name.
-sku|query|string|Filter items by sku.
-price|query|number|Filter items by price.
-weight|query|number|Filter items by weight.
-condition|query|integer|Filter items by condition.
-brand_id|query|integer|Filter items by brand_id.
-date_modified|query|string|Filter items by date_modified.
-date_last_imported|query|string|Filter items by date_last_imported.
-is_visible|query|integer|Filter items by is_visible.
-is_featured|query|integer|Filter items by is_featured.
-inventory_level|query|integer|Filter items by inventory_level.
-total_sold|query|integer|Filter items by total_sold.
-type|query|string|Filter items by type: `physical` or `digital`.
-categories|query|integer|Filter items by categories.
-keyword|query|string|Filter items by keywords found in the name, description, sku, keywords, or brand name.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -813,10 +768,8 @@ Returns a `Product` from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-include|query|string|Include sub-resources on a product, with a comma-separated list. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1026,10 +979,8 @@ Updates a `Product` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-product|body|ProductPut|A BigCommerce `Product` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1353,9 +1304,8 @@ Deletes a `Product` object from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1401,9 +1351,8 @@ Gets all images on a product.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1498,10 +1447,8 @@ Creates an image on a product. Publically accessible URLs and files (form post) 
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-productImage|body|ProductImagePost|A BigCommerce `ProductImage` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1590,10 +1537,8 @@ Gets image on a product.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-image_id|path|integer|The ID of the `Image` that is being operated on.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1673,11 +1618,8 @@ Updates an image on a product. Publicly accessible URLs and files (form post) ar
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-image_id|path|integer|The ID of the `Image` that is being operated on.
-productImage|body|ProductImagePut|A BigCommerce `ProductImage` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1767,10 +1709,8 @@ Deletes a `ProductImage` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-image_id|path|integer|The ID of the `Image` that is being operated on.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1819,9 +1759,8 @@ Gets all videos on a product.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1900,10 +1839,8 @@ Creates a video on a product, using a video ID from YouTube.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-productVideo|body|ProductVideoPost|A BigCommerce `ProductVideo` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1988,10 +1925,8 @@ Gets video on a product.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-video_id|path|string|The ID of the `Video` being operated on.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2067,11 +2002,8 @@ Updates a video on a product.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-video_id|path|string|The ID of the `Video` being operated on.
-productVideo|body|ProductVideoPut|A BigCommerce `ProductVideo` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2157,10 +2089,8 @@ Deletes a `ProductVideo` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-video_id|path|string|The ID of the `Video` being operated on.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2209,11 +2139,8 @@ Returns a `Variant` object list from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-page|query|integer|Control the page in a limited list of products.
-limit|query|integer|Control the items per page.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2323,10 +2250,8 @@ Creates a `Variant` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-Variant|body|VariantPost|`Variant` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2439,10 +2364,8 @@ Gets a `Variant` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-variant_id|path|number|The ID of the `Variant` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2533,11 +2456,8 @@ Updates a `Variant` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-variant_id|path|number|The ID of the `Variant` to which the resource belongs.
-Variant|body|VariantPut|A `Variant` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2647,10 +2567,8 @@ Deletes a `Variant`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-variant_id|path|number|The ID of the `Variant` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2699,14 +2617,8 @@ Gets a `Metafield` object list, by product_id and variant_id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-variant_id|path|number|The ID of the `Variant` to which the resource belongs.
-page|query|integer|Control the page in a limited list of products.
-limit|query|integer|Control the items per page.
-key|query|string|Filter based on a metafield's key.
-namespace|query|string|Filter based on a metafield's key.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2751,8 +2663,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-23T00:48:56Z",
-      "updated_at": "2017-02-23T00:48:56Z"
+      "created_at": "2017-02-23T19:57:40Z",
+      "updated_at": "2017-02-23T19:57:40Z"
     }
   ],
   "meta": {
@@ -2814,11 +2726,8 @@ Creates a variant `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-variant_id|path|number|The ID of the `Variant` to which the resource belongs.
-Metafield|body|MetafieldPost|A `Metafield` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2868,8 +2777,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -2930,11 +2839,8 @@ Gets a `Metafield`, by product_id and variant_id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-variant_id|path|number|The ID of the `Variant` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -2969,8 +2875,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -3016,12 +2922,8 @@ Updates a `Metafield` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-variant_id|path|number|The ID of the `Variant` to which the resource belongs.
-Metafield|body|MetafieldPut|A `Metafield` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -3073,8 +2975,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -3119,11 +3021,8 @@ Deletes a `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-variant_id|path|number|The ID of the `Variant` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -3178,11 +3077,8 @@ print r.json()
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-variant_id|path|number|The ID of the `Variant` to which the resource belongs.
-image_file|formData|file|An image file. Supported MIME types include GIF, JPEG, and PNG.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -3267,9 +3163,8 @@ Gets an array of `Option` objects.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -3395,10 +3290,8 @@ Creates an `Option`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-Option|body|OptionPost|An `Option` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -3576,10 +3469,8 @@ Gets `Option` object by product ID and option id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-option_id|path|integer|The ID of the `Option`.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -3693,11 +3584,8 @@ Updates a Product's `Option`, based on the product_id and option_id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-option_id|path|integer|The ID of the `Option`.
-option|body|OptionPut|A BigCommerce `Option` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -3879,10 +3767,8 @@ Deletes a Product's `Option`, based on the product_id and option_id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-option_id|path|integer|The ID of the `Option`.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -3930,9 +3816,8 @@ Gets an array of `Modifier` objects.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -4064,10 +3949,8 @@ Creates a `Modifier`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-Modifier|body|ModifierPost|A `Modifier` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -4276,10 +4159,8 @@ Gets a `Modifier` by product_id and modifier_id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-modifier_id|path|integer|The ID of the `Modifier`.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -4409,11 +4290,8 @@ Updates an Product's `Modifier` based on the product_id and modifier_id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-modifier_id|path|integer|The ID of the `Modifier`.
-modifier|body|ModifierPut|A BigCommerce `Modifier` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -4624,10 +4502,8 @@ Deletes a Product's `Modifier` based on the product_id and modifier_id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-modifier_id|path|integer|The ID of the `Modifier`.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -4667,7 +4543,7 @@ r = requests.post('https://api.bigcommerce.com/stores/{{store_id}}/v3/catalog/pr
 	
 	'undefined':'undefined',
 	'undefined':'undefined'
-	'value_id':'integer'
+	'value_id':'undefined'
 	'undefined':'undefined'
 	
 })
@@ -4682,12 +4558,8 @@ Adds an image to a modifier value; the image will show on the storefront when th
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-modifier_id|path|integer|The ID of the `Modifier`.
-value_id|path|integer|The ID of the `Modifier`.
-image_file|formData|file|An image file. Supported MIME types include GIF, JPEG, and PNG.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -4775,11 +4647,8 @@ Deletes the image applied to show when the modifier value is selected
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-modifier_id|path|integer|The ID of the `Modifier`.
-value_id|path|integer|The ID of the `Modifier`.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -4829,9 +4698,8 @@ Gets an array of `ComplexRule` objects.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -4930,10 +4798,8 @@ Creates a `ComplexRule`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-ComplexRule|body|ComplexRulePost|`ComplexRule` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -5076,10 +4942,8 @@ Gets a `ComplexRule` by product_id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-complex_rule_id|path|integer|The ID of the `ComplexRule`.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -5176,11 +5040,8 @@ Updates an Product's `ComplexRule`, based on the `product_id` and `complex_rule_
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-complex_rule_id|path|integer|The ID of the `ComplexRule`.
-ComplexRule|body|ComplexRulePut|`ComplexRule` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -5327,10 +5188,8 @@ Deletes a Product's `ComplexRule`, based on the `product_id` and `complex_rule_i
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-complex_rule_id|path|integer|The ID of the `ComplexRule`.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -5379,13 +5238,8 @@ Gets a `Metafield` object list, by `product_id`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-page|query|integer|Control the page in a limited list of products.
-limit|query|integer|Control the items per page.
-key|query|string|Filter based on a metafield's key.
-namespace|query|string|Filter based on a metafield's key.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -5427,8 +5281,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-23T00:48:56Z",
-      "updated_at": "2017-02-23T00:48:56Z"
+      "created_at": "2017-02-23T19:57:40Z",
+      "updated_at": "2017-02-23T19:57:40Z"
     }
   ],
   "meta": {
@@ -5489,10 +5343,8 @@ Creates a product `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-Metafield|body|MetafieldPost|A `Metafield` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -5539,8 +5391,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -5601,10 +5453,8 @@ Gets a `Metafield`, by `product_id`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-product_id|path|integer|The ID of the `Product` the resource belongs to.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -5636,8 +5486,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -5683,11 +5533,8 @@ Updates a `Metafield` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-product_id|path|integer|The ID of the `Product` the resource belongs to.
-Metafield|body|MetafieldPut|A `Metafield` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -5736,8 +5583,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -5782,10 +5629,8 @@ Deletes a `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-product_id|path|integer|The ID of the `Product` the resource belongs to.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -5834,15 +5679,8 @@ Returns a paginated categories collection from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-name|query|string|Filter items by name.
-parent_id|query|integer|Filter items by parent_id.
-page_title|query|string|Filter items by page_title.
-keyword|query|string|Filter items by keywords.
-is_visible|query|integer|Filter items by is_visible.
-page|query|integer|Control the page in a limited list of products.
-limit|query|integer|Control the items per page.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -5952,9 +5790,8 @@ Creates a `Category` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-category|body|CategoryPost|A BigCommerce `Category` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6082,13 +5919,8 @@ Deletes a product or products from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-name|query|string|Filter items by name.
-parent_id|query|integer|Filter items by parent_id.
-page_title|query|string|Filter items by page_title.
-keyword|query|string|Filter items by keywords.
-is_visible|query|integer|Filter items by is_visible.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6146,9 +5978,8 @@ Returns a `Category` from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-category_id|path|number|The ID of the `Category` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6235,10 +6066,8 @@ Updates a `Category` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-category_id|path|number|The ID of the `Category` to which the resource belongs.
-category|body|CategoryPut|A BigCommerce `Category` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6379,9 +6208,8 @@ Deletes one or more `Category` objects from the BigCommerce catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-category_id|path|number|The ID of the `Category` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6427,13 +6255,8 @@ Gets a `Metafield` object list, by category_id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-category_id|path|number|The ID of the `Category` to which the resource belongs.
-page|query|integer|Control the page in a limited list of products.
-limit|query|integer|Control the items per page.
-key|query|string|Filter based on a metafield's key.
-namespace|query|string|Filter based on a metafield's key.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6475,8 +6298,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-23T00:48:56Z",
-      "updated_at": "2017-02-23T00:48:56Z"
+      "created_at": "2017-02-23T19:57:40Z",
+      "updated_at": "2017-02-23T19:57:40Z"
     }
   ],
   "meta": {
@@ -6537,10 +6360,8 @@ Creates a product `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-category_id|path|number|The ID of the `Category` to which the resource belongs.
-Metafield|body|MetafieldPost|A `Metafield` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6587,8 +6408,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -6649,10 +6470,8 @@ Gets a `Metafield` by category_id.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-category_id|path|number|The ID of the `Category` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6684,8 +6503,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -6731,11 +6550,8 @@ Updates a `Metafield` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-category_id|path|number|The ID of the `Category` to which the resource belongs.
-Metafield|body|MetafieldPut|A `Metafield` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6784,8 +6600,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -6830,10 +6646,8 @@ Deletes a `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-category_id|path|number|The ID of the `Category` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6887,10 +6701,8 @@ Creates an image on a category. Publicly accessible URLs and files (form post) a
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-category_id|path|number|The ID of the `Category` to which the resource belongs.
-image_file|formData|file|An image file. Supported MIME types include GIF, JPEG, and PNG.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -6973,9 +6785,8 @@ Deletes a `Category` image from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-category_id|path|number|The ID of the `Category` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7079,12 +6890,8 @@ Gets `Brand` objects.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-name|query|string|Filter items by name.
-page_title|query|string|Filter items by page_title.
-page|query|integer|Control the page in a limited list of products.
-limit|query|integer|Control the items per page.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7173,9 +6980,8 @@ Creates a `Brand` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-Brand|body|BrandPost|A `Brand` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7281,10 +7087,8 @@ Deletes one or more `Brand` objects from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-name|query|string|Filter items by name.
-page_title|query|string|Filter items by page_title.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7332,9 +7136,8 @@ Gets a `Brand` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-brand_id|path|number|The ID of the `Brand` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7410,10 +7213,8 @@ Updates a `Brand` in the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-brand_id|path|number|The ID of the `Brand` to which the resource belongs.
-brand|body|BrandPut|Returns a `Brand` from the BigCommerce Catalog.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7533,9 +7334,8 @@ Deletes a `Brand` from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-brand_id|path|number|The ID of the `Brand` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7581,13 +7381,8 @@ Gets a `Metafield` object list, by `category_id`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-brand_id|path|number|The ID of the `Brand` to which the resource belongs.
-page|query|integer|Control the page in a limited list of products.
-limit|query|integer|Control the items per page.
-key|query|string|Filter based on a metafield's key.
-namespace|query|string|Filter based on a metafield's key.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7629,8 +7424,8 @@ Status|Meaning|Description
       "resource_type": "category",
       "resource_id": 0,
       "id": 0,
-      "created_at": "2017-02-23T00:48:56Z",
-      "updated_at": "2017-02-23T00:48:56Z"
+      "created_at": "2017-02-23T19:57:40Z",
+      "updated_at": "2017-02-23T19:57:40Z"
     }
   ],
   "meta": {
@@ -7691,10 +7486,8 @@ Creates a product `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-brand_id|path|number|The ID of the `Brand` to which the resource belongs.
-Metafield|body|MetafieldPost|A `Metafield` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7741,8 +7534,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -7803,10 +7596,8 @@ Gets a `Metafield`, by `category_id`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-brand_id|path|number|The ID of the `Brand` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7838,8 +7629,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -7885,11 +7676,8 @@ Updates a `Metafield` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-brand_id|path|number|The ID of the `Brand` to which the resource belongs.
-Metafield|body|MetafieldPut|A `Metafield` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -7938,8 +7726,8 @@ Status|Meaning|Description
     "resource_type": "category",
     "resource_id": 0,
     "id": 0,
-    "created_at": "2017-02-23T00:48:56Z",
-    "updated_at": "2017-02-23T00:48:56Z"
+    "created_at": "2017-02-23T19:57:40Z",
+    "updated_at": "2017-02-23T19:57:40Z"
   },
   "meta": {}
 }
@@ -7984,10 +7772,8 @@ Deletes a `Metafield`.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-metafield_id|path|number|The ID of the `Metafield`.
-brand_id|path|number|The ID of the `Brand` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -8041,10 +7827,8 @@ Creates an image on a `Brand`. Publicly accessible URLs and files (form post) ar
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-brand_id|path|number|The ID of the `Brand` to which the resource belongs.
-image_file|formData|file|An image file. Supported MIME types include GIF, JPEG, and PNG.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -8127,9 +7911,8 @@ Deletes a `Brand` image from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-brand_id|path|number|The ID of the `Brand` to which the resource belongs.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -8174,12 +7957,8 @@ Returns a `Variant` object list from the BigCommerce Catalog.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-id|query|integer|Filter items by id.
-sku|query|string|Filter items by sku.
-page|query|integer|Control the page in a limited list of products.
-limit|query|integer|Control the items per page.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -8338,17 +8117,8 @@ Returns a paginated Subscribers collection.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-email|query|string|Filter items by email.
-first_name|query|string|Filter items by first_name.
-last_name|query|string|Filter items by last_name.
-source|query|string|Filter items by source.
-order_id|query|integer|Filter items by order_id.
-date_created|query|string|Filter items by date_created.
-date_modified|query|string|Filter items by date_modified.
-page|query|integer|Control the page in a limited list of products.
-limit|query|integer|Control the items per page.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -8452,9 +8222,8 @@ Creates a `Subscriber` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-subscriber|body|SubscriberPost|`Subscriber` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -8557,15 +8326,8 @@ Deletes a Subscriber or Subscribers from BigCommerce Customers.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-email|query|string|Filter items by email.
-first_name|query|string|Filter items by first_name.
-last_name|query|string|Filter items by last_name.
-source|query|string|Filter items by source.
-order_id|query|integer|Filter items by order_id.
-date_created|query|string|Filter items by date_created.
-date_modified|query|string|Filter items by date_modified.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -8628,9 +8390,8 @@ Gets `Subscriber` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-subscriber_id|path|number|The ID of the `Subscriber` requested.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -8705,10 +8466,8 @@ Updates a `Subscriber` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-subscriber_id|path|number|The ID of the `Subscriber` requested.
-subscriber|body|SubscriberPut|Returns a `Subscriber` object.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -8824,9 +8583,8 @@ Deletes a `Subscriber` object.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-subscriber_id|path|number|The ID of the `Subscriber` requested.
+Parameter|Type|Description
+---|---|---|---|
 
 
 

@@ -49,9 +49,8 @@ Returns a paginated collection of `Transaction` objects related to a BigCommerce
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-order_id|path|number|The ID of the `Order` to which the transactions belong.
+Parameter|Type|Description
+---|---|---|---|
 
 
 

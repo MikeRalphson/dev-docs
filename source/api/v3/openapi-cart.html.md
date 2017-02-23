@@ -49,10 +49,8 @@ Add / Update the billing address in quote object
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-quote|query|string|No description
-billingData|body|BillingRequestData|No description
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -148,9 +146,8 @@ Adding coupon or gift certificate code to the cart
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-couponCode|body|string|coupon or gift certificate code
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -200,9 +197,8 @@ Removing coupon or gift certificate code from the cart
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-couponCode|path|string|coupon or gift certificate code
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -257,15 +253,8 @@ Associate the quote object to a customer. Parameters are comma separated as valu
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-quote|query|string|No description
-customer|query|string|No description
-shippingAddress|query|string|No description
-billingAddress|query|string|No description
-shippingOptions|query|string|No description
-cart|query|string|No description
-order|query|string|No description
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -311,15 +300,8 @@ currently any GET request to /customer end point will result to a `405` response
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-quote|query|string|No description
-customer|query|string|No description
-shippingAddress|query|string|No description
-billingAddress|query|string|No description
-shippingOptions|query|string|No description
-cart|query|string|No description
-order|query|string|No description
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -358,14 +340,8 @@ Remove customer information from the quote.
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-quote|query|string|No description
-customer|query|string|No description
-shippingAddress|query|string|No description
-billingAddress|query|string|No description
-shippingOptions|query|string|No description
-cart|query|string|No description
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -413,9 +389,8 @@ Used to create an order (currently we use session to retrieve quote data)
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-Data|body|RequestOrderData|A collection of data consumed by the order endpoint when creating the order for different payment methods and payment providers.
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -475,9 +450,8 @@ Retrieves an order, which is the composition of set of items
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-orderId|path|integer|Id of the Order
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -514,7 +488,7 @@ headers = {
 
 r = requests.post('://undefined/order/{orderId}', headers=headers, params={
 	
-	'orderId':'integer'
+	'orderId':'undefined'
 	
 })
 
@@ -526,9 +500,8 @@ Update the order. Finalize in case the order has been set previously in checkout
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-orderId|path|integer|Id of the Order
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -630,7 +603,7 @@ headers = {
 
 r = requests.post('://undefined/order/{orderId}/payment', headers=headers, params={
 	
-	'orderId':'integer',
+	'orderId':'undefined',
 	'paymentData':'undefined'
 	
 })
@@ -643,10 +616,8 @@ Update the payment and order status from payment service (BigPay) & finalize the
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-orderId|path|integer|Id of the Order to be updated
-paymentData|body|PaymentRequestData|No description
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -812,9 +783,8 @@ Retrieve a single, existing payment method
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-providerId|path|string|Id of the payment provider
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -858,15 +828,8 @@ Parameters are comma separated as values against `includes` key. For example, `/
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-quote|query|string|No description
-customer|query|string|No description
-shippingAddress|query|string|No description
-billingAddress|query|string|No description
-shippingOptions|query|string|No description
-cart|query|string|No description
-order|query|string|No description
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -917,12 +880,8 @@ Add / Update the shipping address in quote object
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-cart|query|string|No description
-quote|query|string|No description
-shippingOptions|query|string|No description
-shippingData|body|ShippingRequestData|No description
+Parameter|Type|Description
+---|---|---|---|
 
 
 
@@ -1024,9 +983,8 @@ Set in the order the selected shipping option
 
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-ShippingOptionRequestData|body|ShippingOptionRequestData|No description
+Parameter|Type|Description
+---|---|---|---|
 
 
 

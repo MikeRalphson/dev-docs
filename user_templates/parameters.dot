@@ -1,8 +1,8 @@
 ### Parameters
 
-Parameter|In|Type|Description
----|---|---|---|---|
-{{~ data.parameters :p}}{{=p.name}}|{{=p.in}}|{{=p.type}}|{{=p.shortDesc}}
+Parameter|Type|Description
+---|---|---|---|
+{{~ data.parameters.schema :p}}{{=p.name}}|{{=p.type}}|{{=p.shortDesc}}
 {{~}}
 
 {{? data.enums.length}}
