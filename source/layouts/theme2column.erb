@@ -14,6 +14,15 @@ License for the specific language governing permissions and limitations
 under the License.
 %>
 <% language_tabs = current_page.data.language_tabs %>
+<% page_content = yield %>
+<%
+  if current_page.data.includes
+    current_page.data.includes.each do |include|
+      page_content += partial("includes/#{include}")
+    end
+  end
+%>
+
 <!doctype html>
 <html>
   <head>
@@ -57,7 +66,7 @@ under the License.
   <%= partial "layouts/navbar" %>
 </header>
 
-    <div class="tocify-wrapper">
+    <div class="toc-wrapper">
       <div class="separator separator-top"></div>
       <div class="api-nav">
         <div class="nav-label">Blueprint Themes</div>
@@ -89,32 +98,29 @@ under the License.
         </div>
         <ul class="search-results"></ul>
       <% end %>
-      <div id="toc">
+      <div id="toc" class="toc-list-h1">
+        <% toc_data(page_content).each do |h1| %>
+          <li>
+            <a href="#<%= h1[:id] %>" class="toc-h1 toc-link" data-title="<%= h1[:content] %>"><%= h1[:content] %></a>
+            <% if h1[:children].length > 0 %>
+              <ul class="toc-list-h2">
+                <% h1[:children].each do |h2| %>
+                  <li>
+                    <a href="#<%= h2[:id] %>" class="toc-h2 toc-link" data-title="<%= h1[:content] %>"><%= h2[:content] %></a>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
+          </li>
+        <% end %>
       </div>
       <%= partial "layouts/mailchimp" %>
     </div>
     <div class="page-wrapper">
       <div class="content">
-        <%= yield %>
-        <% current_page.data.includes && current_page.data.includes.each do |include| %>
-          <%= partial "includes/#{include}" %>
-        <% end %>
+        <%= page_content %>
       </div>
     </div>
-    <script>
-        // This script reveals jump/link targets beneath a persistent header - tweaked for FF/IE:
-        var container = $('.page-wrapper .content');
-        var headerHeightPixels = 85;
-
-        container.on('click', function(event) {
-            var target = $(event.target);
-
-            if (target.is('a') && target.attr('href').charAt(0) === '#') {
-                setTimeout(function() {
-                    $(window).scrollTop($(window).scrollTop() - headerHeightPixels)
-                }, 10);
-            }
-        });
-    </script>
+    <%= partial "layouts/footerscript" %>
   </body>
 </html>

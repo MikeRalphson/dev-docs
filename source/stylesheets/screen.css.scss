@@ -66,7 +66,7 @@ html, body {
     $nav-subitem-bg;
 }
 
-.tocify-wrapper {
+.toc-wrapper {
   transition: left 0.3s ease-in-out;
   overflow-y: auto;
   overflow-x: hidden;
@@ -181,14 +181,6 @@ html, body {
     }
   }
 
-  .tocify-item>a, .toc-footer li {
-    padding: 0 $nav-padding 0 $nav-padding;
-    display: block;
-    overflow-x: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
   // The Table of Contents is composed of multiple nested
   // unordered lists.  These styles remove the default
   // styling of an unordered list because it is ugly.
@@ -197,13 +189,6 @@ html, body {
     margin: 0;
     padding: 0;
     line-height: 28px;
-  }
-
-  li {
-    color: $nav-text;
-    transition-property: background;
-    transition-timing-function: linear;
-    transition-duration: 230ms;
   }
 
   a {
@@ -219,7 +204,7 @@ html, body {
   }
 
   // This is the currently selected ToC entry
-  .tocify-focus {
+  .toc-link.active {
     background-color: $nav-active-bg;
 
     a {
@@ -227,10 +212,8 @@ html, body {
     }
   }
 
-  // Subheaders are the submenus that slide open
-  // in the table of contents.
-  .tocify-subheader {
-    display: none; // tocify will override this when needed
+  .toc-list-h2 {
+    display: none; 
     background-color: $nav-subitem-bg;
     font-weight: $tocify-font-weight;
     text-indent: 15px;
@@ -240,33 +223,6 @@ html, body {
         background: url('../images/slash.svg') no-repeat;
         background-position: 13px 8px;
         background-size: 10px;
-      }
-    }
-
-    .tocify-item>a { 
-      color: $nav-text;
-      font-size: 13px !important;
-      font-weight: $tocify-font-weight;
-
-      .tocify-subheader {
-        .tocify-item>a {
-          font-size: 13px !important;
-          font-weight: $tocify-font-weight;
-        }
-      }
-
-      .tocify-subheader {
-        .tocify-item>a {
-          font-size: 13px !important;
-          font-weight: $tocify-font-weight;
-        }
-      }
-
-      .tocify-subheader {
-        .tocify-item>a {
-          font-size: 13px !important;
-          font-weight: $tocify-font-weight;
-        }
       }
     }
 
@@ -281,6 +237,11 @@ html, body {
 
   .tocify-subheader .tocify-subheader .tocify-subheader {
     text-indent: 45px;
+  }
+
+  .toc-h2 {
+    padding-left: $nav-padding + $nav-indent;
+    font-size: 12px;
   }
 
   .toc-footer {
@@ -304,7 +265,19 @@ html, body {
       text-decoration: none;
     }
   }
+}
 
+.toc-link, .toc-footer li {
+  padding: 0 $nav-padding 0 $nav-padding;
+  display: block;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  color: #fff;
+  transition-property: background;
+  transition-timing-function: linear;
+  transition-duration: 130ms;
 }
 
 // button to show navigation on mobile devices
@@ -796,7 +769,7 @@ body.twocolumn {
 // There are also a couple styles disperesed
 
 @media (max-width: $tablet-width) {
-  .tocify-wrapper {
+  .toc-wrapper {
     left: -$nav-width;
 
     &.open {
@@ -813,7 +786,7 @@ body.twocolumn {
     z-index: 999;
   }
 
-  .tocify-wrapper .tocify-item > a {
+  .toc-link {
     padding-top: 0.3em;
     padding-bottom: 0.3em;
   }
@@ -828,7 +801,7 @@ body.twocolumn {
     margin-right: 0;
   }
 
-  .tocify-wrapper .lang-selector {
+  .toc-wrapper .lang-selector {
     display: block;
     margin-top: 40px;
     background-color: transparent;

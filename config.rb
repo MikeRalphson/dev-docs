@@ -41,3 +41,7 @@ configure :build do
   # activate :asset_hash
   # activate :gzip
 end
+
+helpers do
+  require './lib/toc_data.rb'
+end
