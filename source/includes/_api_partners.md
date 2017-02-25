@@ -39,9 +39,18 @@ Once approved, you will receive one or more emails listing your partner credenti
 
 ## <span class="jumptarget"> Create a Sandbox Store </span>
 
-To open your sandbox store, log into the Partner Portal, then click **Create a Trial Store**. 
+To open your sandbox store:
 
-When you log into your new store, use the same email that you used when applying to become a Technology Partner.
+1. Navigate to the <a href="https://www.bigcommerce.com/pricing/" target ="_blank">BigCommerce Pricing page</a>.
+
+2. Select **START YOUR FREE TRIAL**.
+
+3. Where prompted for an email address, enter the same email that you used when applying to become a Technology Partner. <br>
+Then select **START YOUR TRIAL**.
+
+4. In the trial-store setup form, enter a store name, password, and other details. Then select **CREATE YOUR STORE**.
+
+5. When you log into your new store, use the same email that you used at step 3 above.
 
 <aside class="notice">
 <span class="aside-notice-hd">Trial Stores Don't Expire</span><br><br>
