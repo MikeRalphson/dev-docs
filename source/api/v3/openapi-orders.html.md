@@ -2,13 +2,8 @@
 title: BigCommerce Orders API v3.0.0
 layout: "layout"
 language_tabs:
-  - shell: Shell
-  - http: HTTP
-  - javascript: JavaScript
-  - javascript--nodejs: Node.JS
   - python: Python
   - ruby: Ruby
-  - java: Java
 toc_footers: []
 includes: []
 search: true
@@ -19,6 +14,9 @@ highlight_theme: darkula
 
 A Swagger Document for the BigCommmerce API V3.
 
+Base URL = https://api.bigcommerce.com/stores/{{store_id}}/v3
+
+<a href="http://www.bigcommerce.com/terms">Terms of service</a>
 
 
 # Orders
@@ -28,62 +26,6 @@ BigCommerce Orders API Definition.
 ## getTransactions
 
 > Code samples
-
-````shell
-# You can also use wget
-curl -X get https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-GET https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions HTTP/1.1
-Host: api.bigcommerce.com
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: 'https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions',
-  method: 'get',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions',
-{ 
-  method: 'GET'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
 
 ````ruby
 require 'rest-client'
@@ -110,26 +52,14 @@ headers = {
 
 }
 
-r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions', headers=headers)
+r = requests.get('https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions', params={
+
+    },
+    headers=headers
+
+)
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("https://api.bigcommerce.com/stores/{{store_id}}/v3/orders/{order_id}/transactions");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 `GET /orders/{order_id}/transactions`
@@ -143,17 +73,12 @@ Parameter|In|Type|Required|Description
 order_id|path|number|true|The ID of the `Order` to which the transactions belong.
 
 
-##### order_id
-The ID of the `Order` to which the transactions belong.
-
 ### Responses
 
 Status|Meaning|Description
 ---|---|---|
 200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|An array of transactions.
-
 204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No content found to fulfill request.
-
 404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|The resource was not found.
 
 > Example responses

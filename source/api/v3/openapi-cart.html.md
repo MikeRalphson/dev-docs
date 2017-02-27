@@ -2,13 +2,8 @@
 title: Order API v2.0.0
 layout: "layout"
 language_tabs:
-  - shell: Shell
-  - http: HTTP
-  - javascript: JavaScript
-  - javascript--nodejs: Node.JS
   - python: Python
   - ruby: Ruby
-  - java: Java
 toc_footers: []
 includes: []
 search: true
@@ -18,6 +13,7 @@ highlight_theme: darkula
 # Order API v2.0.0
 
 
+Base URL = ://undefined/
 
 
 
@@ -26,62 +22,6 @@ highlight_theme: darkula
 ## POST /billing
 
 > Code samples
-
-````shell
-# You can also use wget
-curl -X post ://undefined/billing?quote=string \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-POST ://undefined/billing?quote=string HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/billing',
-  method: 'post',
-  data: '?quote=string',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-var inputBody = '{}';
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/billing?quote=string',
-{ 
-  method: 'POST',
-  body: inputBody
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
 
 ````ruby
 require 'rest-client'
@@ -118,23 +58,6 @@ r = requests.post('://undefined/billing', params={
 )
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/billing?quote=string");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Add / Update the billing address in quote object
@@ -171,62 +94,6 @@ This operation does not require authentication
 
 > Code samples
 
-````shell
-# You can also use wget
-curl -X get ://undefined/cart \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-GET ://undefined/cart HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/cart',
-  method: 'get',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/cart',
-{ 
-  method: 'GET'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
-
 ````ruby
 require 'rest-client'
 require 'json'
@@ -252,26 +119,14 @@ headers = {
 
 }
 
-r = requests.get('://undefined/cart', headers=headers)
+r = requests.get('://undefined/cart', params={
+
+    },
+    headers=headers
+
+)
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/cart");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 *Retrieve cart data*
@@ -299,62 +154,6 @@ This operation does not require authentication
 ## POST /coupon
 
 > Code samples
-
-````shell
-# You can also use wget
-curl -X post ://undefined/coupon \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-POST ://undefined/coupon HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/coupon',
-  method: 'post',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-var inputBody = ''string'';
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/coupon',
-{ 
-  method: 'POST',
-  body: inputBody
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
 
 ````ruby
 require 'rest-client'
@@ -389,23 +188,6 @@ r = requests.post('://undefined/coupon', params={
 )
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/coupon");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Adding coupon or gift certificate code to the cart
@@ -442,62 +224,6 @@ This operation does not require authentication
 
 > Code samples
 
-````shell
-# You can also use wget
-curl -X delete ://undefined/coupon/{couponCode} \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-DELETE ://undefined/coupon/{couponCode} HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/coupon/{couponCode}',
-  method: 'delete',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/coupon/{couponCode}',
-{ 
-  method: 'DELETE'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
-
 ````ruby
 require 'rest-client'
 require 'json'
@@ -523,26 +249,14 @@ headers = {
 
 }
 
-r = requests.delete('://undefined/coupon/{couponCode}', headers=headers)
+r = requests.delete('://undefined/coupon/{couponCode}', params={
+
+    },
+    headers=headers
+
+)
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/coupon/{couponCode}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("DELETE");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Removing coupon or gift certificate code from the cart
@@ -573,62 +287,6 @@ This operation does not require authentication
 ## POST /customer
 
 > Code samples
-
-````shell
-# You can also use wget
-curl -X post ://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-POST ://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/customer',
-  method: 'post',
-  data: '?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string',
-{ 
-  method: 'POST'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
 
 ````ruby
 require 'rest-client'
@@ -677,23 +335,6 @@ r = requests.post('://undefined/customer', params={
 )
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Associate the quote object to a customer. Parameters are comma separated as values against `includes` key. For example, `/quote?includes=customer,shippingOptions`
@@ -732,62 +373,6 @@ This operation does not require authentication
 
 > Code samples
 
-````shell
-# You can also use wget
-curl -X get ://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-GET ://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/customer',
-  method: 'get',
-  data: '?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string',
-{ 
-  method: 'GET'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
-
 ````ruby
 require 'rest-client'
 require 'json'
@@ -820,26 +405,21 @@ headers = {
 
 }
 
-r = requests.get('://undefined/customer', headers=headers)
+r = requests.get('://undefined/customer', params={
+        'quote':'string',
+        'customer':'string',
+        'shippingAddress':'string',
+        'billingAddress':'string',
+        'shippingOptions':'string',
+        'cart':'string',
+        'order':'string'
+
+    },
+    headers=headers
+
+)
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 currently any GET request to /customer end point will result to a `405` response because `getAction()` method does't exists
@@ -870,62 +450,6 @@ This operation does not require authentication
 ## DELETE /customer
 
 > Code samples
-
-````shell
-# You can also use wget
-curl -X delete ://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-DELETE ://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/customer',
-  method: 'delete',
-  data: '?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string',
-{ 
-  method: 'DELETE'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
 
 ````ruby
 require 'rest-client'
@@ -958,26 +482,20 @@ headers = {
 
 }
 
-r = requests.delete('://undefined/customer', headers=headers)
+r = requests.delete('://undefined/customer', params={
+        'quote':'string',
+        'customer':'string',
+        'shippingAddress':'string',
+        'billingAddress':'string',
+        'shippingOptions':'string',
+        'cart':'string'
+
+    },
+    headers=headers
+
+)
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/customer?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("DELETE");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Remove customer information from the quote.
@@ -1013,62 +531,6 @@ This operation does not require authentication
 
 > Code samples
 
-````shell
-# You can also use wget
-curl -X post ://undefined/order \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-POST ://undefined/order HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/order',
-  method: 'post',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-var inputBody = '{}';
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/order',
-{ 
-  method: 'POST',
-  body: inputBody
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
-
 ````ruby
 require 'rest-client'
 require 'json'
@@ -1102,23 +564,6 @@ r = requests.post('://undefined/order', params={
 )
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/order");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Used to create an order (currently we use session to retrieve quote data)
@@ -1163,62 +608,6 @@ This operation does not require authentication
 
 > Code samples
 
-````shell
-# You can also use wget
-curl -X get ://undefined/order/{orderId} \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-GET ://undefined/order/{orderId} HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/order/{orderId}',
-  method: 'get',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/order/{orderId}',
-{ 
-  method: 'GET'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
-
 ````ruby
 require 'rest-client'
 require 'json'
@@ -1244,26 +633,14 @@ headers = {
 
 }
 
-r = requests.get('://undefined/order/{orderId}', headers=headers)
+r = requests.get('://undefined/order/{orderId}', params={
+
+    },
+    headers=headers
+
+)
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/order/{orderId}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 *Retrieve order data*
@@ -1296,62 +673,6 @@ This operation does not require authentication
 ## POST /order/{orderId}
 
 > Code samples
-
-````shell
-# You can also use wget
-curl -X post ://undefined/order/{orderId} \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-POST ://undefined/order/{orderId} HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/order/{orderId}',
-  method: 'post',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/order/{orderId}',
-{ 
-  method: 'POST'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
 
 ````ruby
 require 'rest-client'
@@ -1386,23 +707,6 @@ r = requests.post('://undefined/order/{orderId}', params={
 )
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/order/{orderId}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Update the order. Finalize in case the order has been set previously in checkout
@@ -1499,75 +803,6 @@ This operation does not require authentication
 
 > Code samples
 
-````shell
-# You can also use wget
-curl -X post ://undefined/order/{orderId}/payment \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-POST ://undefined/order/{orderId}/payment HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/order/{orderId}/payment',
-  method: 'post',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-var inputBody = '{
-  "gateway": "string",
-  "status": "PAYMENT_SUCCESS",
-  "transactionType": "TRANSACTION_AUTHORIZATION",
-  "amount": 0,
-  "amountAsInteger": 0,
-  "cardType": "string",
-  "lastFourDigitsOfCard": 0,
-  "providerTransactionId": "string",
-  "providerAuthorizationCode": "string",
-  "errors": [
-    {}
-  ]
-}';
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/order/{orderId}/payment',
-{ 
-  method: 'POST',
-  body: inputBody
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
-
 ````ruby
 require 'rest-client'
 require 'json'
@@ -1601,23 +836,6 @@ r = requests.post('://undefined/order/{orderId}/payment', params={
 )
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/order/{orderId}/payment");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Update the payment and order status from payment service (BigPay) & finalize the order. Requires HAWK authentication.
@@ -1733,62 +951,6 @@ This operation does not require authentication
 
 > Code samples
 
-````shell
-# You can also use wget
-curl -X get ://undefined/payments \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-GET ://undefined/payments HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/payments',
-  method: 'get',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/payments',
-{ 
-  method: 'GET'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
-
 ````ruby
 require 'rest-client'
 require 'json'
@@ -1814,26 +976,14 @@ headers = {
 
 }
 
-r = requests.get('://undefined/payments', headers=headers)
+r = requests.get('://undefined/payments', params={
+
+    },
+    headers=headers
+
+)
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/payments");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Retrieve a list of existing payment methods
@@ -1856,62 +1006,6 @@ This operation does not require authentication
 ## GET /payments/{providerId}
 
 > Code samples
-
-````shell
-# You can also use wget
-curl -X get ://undefined/payments/{providerId} \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-GET ://undefined/payments/{providerId} HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/payments/{providerId}',
-  method: 'get',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/payments/{providerId}',
-{ 
-  method: 'GET'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
 
 ````ruby
 require 'rest-client'
@@ -1938,26 +1032,14 @@ headers = {
 
 }
 
-r = requests.get('://undefined/payments/{providerId}', headers=headers)
+r = requests.get('://undefined/payments/{providerId}', params={
+
+    },
+    headers=headers
+
+)
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/payments/{providerId}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Retrieve a single, existing payment method
@@ -1987,62 +1069,6 @@ This operation does not require authentication
 ## GET /quote
 
 > Code samples
-
-````shell
-# You can also use wget
-curl -X get ://undefined/quote?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-GET ://undefined/quote?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/quote',
-  method: 'get',
-  data: '?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/quote?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string',
-{ 
-  method: 'GET'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
 
 ````ruby
 require 'rest-client'
@@ -2076,26 +1102,21 @@ headers = {
 
 }
 
-r = requests.get('://undefined/quote', headers=headers)
+r = requests.get('://undefined/quote', params={
+        'quote':'string',
+        'customer':'string',
+        'shippingAddress':'string',
+        'billingAddress':'string',
+        'shippingOptions':'string',
+        'cart':'string',
+        'order':'string'
+
+    },
+    headers=headers
+
+)
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/quote?quote=string&customer=string&shippingAddress=string&billingAddress=string&shippingOptions=string&cart=string&order=string");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Parameters are comma separated as values against `includes` key. For example, `/quote?includes=customer,shippingOptions`
@@ -2131,62 +1152,6 @@ This operation does not require authentication
 ## POST /shipping
 
 > Code samples
-
-````shell
-# You can also use wget
-curl -X post ://undefined/shipping?cart=string&quote=string&shippingOptions=string \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-POST ://undefined/shipping?cart=string&quote=string&shippingOptions=string HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/shipping',
-  method: 'post',
-  data: '?cart=string&quote=string&shippingOptions=string',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-var inputBody = '{}';
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/shipping?cart=string&quote=string&shippingOptions=string',
-{ 
-  method: 'POST',
-  body: inputBody
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
 
 ````ruby
 require 'rest-client'
@@ -2227,23 +1192,6 @@ r = requests.post('://undefined/shipping', params={
 )
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/shipping?cart=string&quote=string&shippingOptions=string");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 Add / Update the shipping address in quote object
@@ -2282,62 +1230,6 @@ This operation does not require authentication
 
 > Code samples
 
-````shell
-# You can also use wget
-curl -X get ://undefined/shippingOptions \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-GET ://undefined/shippingOptions HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/shippingOptions',
-  method: 'get',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/shippingOptions',
-{ 
-  method: 'GET'
-  
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
-
 ````ruby
 require 'rest-client'
 require 'json'
@@ -2363,26 +1255,14 @@ headers = {
 
 }
 
-r = requests.get('://undefined/shippingOptions', headers=headers)
+r = requests.get('://undefined/shippingOptions', params={
+
+    },
+    headers=headers
+
+)
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/shippingOptions");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 *Retrieve Shipping Options*
@@ -2417,62 +1297,6 @@ This operation does not require authentication
 
 > Code samples
 
-````shell
-# You can also use wget
-curl -X put ://undefined/shippingOptions \ 
-  -H 'Accept: application/json' \ 
-  -H 'Content-Type: application/json'
-
-````
-
-````http
-PUT ://undefined/shippingOptions HTTP/1.1
-Host: undefined
-Content-Type: application/json
-Accept: application/json
-
-````
-
-````javascript
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-$.ajax({
-  url: '://undefined/shippingOptions',
-  method: 'put',
-  
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-````
-
-````javascript--nodejs
-const request = require('node-fetch');
-var inputBody = '{}';
-var headers = {
-  'Accept':'application/json',
-  'Content-Type':'application/json'
-
-};
-
-fetch('://undefined/shippingOptions',
-{ 
-  method: 'PUT',
-  body: inputBody
-  
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-````
-
 ````ruby
 require 'rest-client'
 require 'json'
@@ -2506,23 +1330,6 @@ r = requests.put('://undefined/shippingOptions', params={
 )
 
 print r.json()
-
-````
-
-````java
-URL obj = new URL("://undefined/shippingOptions");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("PUT");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
 ````
 
 *Set Shipping Option*
