@@ -1,3 +1,0 @@
-
-# You can also use wget
-curl -X {{=data.method}} {{=data.url}}

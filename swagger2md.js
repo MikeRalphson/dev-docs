@@ -79,10 +79,13 @@ var endPath = "source/api/v3";
 var options = {}; // defaults shown
 options.codeSamples = true;
 options.yaml = true;
-options.language_tabs = ['python'];
+//options.language_tabs = ['python'];
 //options.loadedFrom = sourceUrl;
 options.user_templates = './user_templates';
+options.templateCallback = function(templateName,data) { return data };
 options.theme = 'darkula';
+options.search = true;
+options.includes = [];
 
 // Delete all existing .generated.md files
 // Generate new markdown from swagger files
