@@ -1,5 +1,6 @@
 # BigCommerce API & Themes Documentation
-*Create apps and themes for thousands of successful merchants on the best ecommerce platform for growing sales*
+[![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/bc-AlyssNoland/developer-documentation)
+*Create apps and themes for thousands of successful merchants on a leading SaaS provider for merchants running an online business*
 
 This project hosts the documentation available at [https://developer.bigcommerce.com/](https://developer.bigcommerce.com/).
 
