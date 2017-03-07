@@ -197,7 +197,7 @@ definitions:
         description: |
           The datetime of the transaction.
         type: string
-        format: data-time
+        format: date-time
       test:
         type: boolean
         description: |
